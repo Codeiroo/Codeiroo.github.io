@@ -1,0 +1,53 @@
+# Archivos de configuración con información sensible
+config/mongodb.config.js
+config/firebase.config.js
+config/*.env
+config/secrets.json
+
+# Dependencias de Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+
+# Archivos de entorno
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Directorios y archivos de sistema
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de log
+logs/
+*.log
+
+# Archivos temporales
+tmp/
+temp/
+.tmp/
+*.tmp
+
+# Archivos de caché
+.cache/
+.npm/
+
+# Archivos de compilación
+dist/
+build/
+out/
+
+# Archivos de cobertura de pruebas
+coverage/
+.nyc_output/
+
+# Archivos locales específicos
+*.local

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Códigos de Error</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="../config/firebase.config.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Contenedor de Login -->
+        <div id="loginContainer" class="auth-container">
+            <div class="auth-box">
+                <h1>Acceso Administrador</h1>
+                <div class="logo">
+                    <img src="img/admin-logo.png" alt="Logo Admin" onerror="this.src='../img/placeholder-logo.png'">
+                </div>
+                
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                    </div>
+                    
+                    <div class="form-group" id="errorMsgContainer" style="display: none;">
+                        <div class="error-message" id="errorMsg"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Solo usuarios autorizados pueden acceder a este panel.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenedor de Panel Admin (oculto inicialmente) -->
+        <div id="adminContainer" class="admin-container" style="display: none;">
+            <header class="admin-header">
+                <div class="header-title">
+                    <h1>Panel de Administración</h1>
+                    <span>Gestión de Códigos de Error</span>
+                </div>
+                <div class="user-info">
+                    <span id="userEmail"></span>
+                    <button id="logoutBtn" class="btn btn-small">Cerrar Sesión</button>
+                </div>
+            </header>
+            
+            <main class="admin-content">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="errors">Códigos de Error</button>
+                    <button class="tab-btn" data-tab="brands">Marcas</button>
+                    <button class="tab-btn" data-tab="stats">Estadísticas</button>
+                </div>
+                
+                <div class="tab-content active" id="errorsTab">
+                    <div class="panel-header">
+                        <h2>Gestión de Códigos de Error</h2>
+                        <button id="addErrorBtn" class="btn btn-primary">Agregar Nuevo</button>
+                    </div>
+                    
+                    <div class="search-filters">
+                        <div class="filter-group">
+                            <input type="text" id="errorSearchInput" placeholder="Buscar códigos...">
+                            <select id="errorBrandFilter">
+                                <option value="">Todas las marcas</option>
+                                <option value="schneider">Schneider Electric</option>
+                                <option value="siemens">Siemens</option>
+                                <option value="abb">ABB</option>
+                                <option value="ge">General Electric</option>
+                                <!-- Otras opciones se cargarán dinámicamente -->
+                            </select>
+                            <button class="btn btn-search" id="errorSearchBtn">Buscar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table" id="errorsTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Código</th>
+                                    <th>Marca</th>
+                                    <th>Modelo</th>
+                                    <th>Título</th>
+                                    <th>Severidad</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="errorsTableBody">
+                                <!-- Datos dinámicos -->
+                            </tbody>
+                        </table>
+                        <div id="errorsPagination" class="pagination"></div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="brandsTab">
+                    <div class="panel-header">
+                        <h2>Gestión de Marcas</h2>
+                        <button id="addBrandBtn" class="btn btn-primary">Agregar Marca</button>
+                    </div>
+                    
+                    <div class="data-table-container">
+                        <table class="data-table" id="brandsTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Nº de Dispositivos</th>
+                                    <th>Nº de Errores</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="brandsTableBody">
+                                <!-- Datos dinámicos -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="statsTab">
+                    <h2>Estadísticas de la Base de Datos</h2>
+                    
+                    <div class="stats-panels">
+                        <div class="stats-panel">
+                            <div class="stats-header">Total Códigos de Error</div>
+                            <div class="stats-value" id="totalErrorsCount">-</div>
+                        </div>
+                        
+                        <div class="stats-panel">
+                            <div class="stats-header">Marcas Registradas</div>
+                            <div class="stats-value" id="totalBrandsCount">-</div>
+                        </div>
+                        
+                        <div class="stats-panel">
+                            <div class="stats-header">Últimas Actualizaciones</div>
+                            <div class="stats-value" id="lastUpdateDate">-</div>
+                        </div>
+                    </div>
+                    
+                    <div class="charts-container">
+                        <div class="chart" id="errorsByBrandChart">
+                            <!-- Gráfico se cargará aquí -->
+                            <p class="chart-placeholder">Distribución de errores por marca</p>
+                        </div>
+                        
+                        <div class="chart" id="errorsBySeverityChart">
+                            <!-- Gráfico se cargará aquí -->
+                            <p class="chart-placeholder">Errores por nivel de severidad</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Modal para agregar/editar código de error -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Agregar Código de Error</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <div class="modal-body">
+                <form id="errorForm">
+                    <input type="hidden" id="errorId">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="errorBrand">Marca</label>
+                            <select id="errorBrand" required>
+                                <option value="">Seleccionar marca</option>
+                                <option value="schneider">Schneider Electric</option>
+                                <option value="siemens">Siemens</option>
+                                <option value="abb">ABB</option>
+                                <!-- Otras opciones se cargarán dinámicamente -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="errorModel">Modelo/Serie</label>
+                            <input type="text" id="errorModel" placeholder="Ej. ATV320" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="errorCode">Código de Error</label>
+                            <input type="text" id="errorCode" placeholder="Ej. F0001" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="errorSeverity">Nivel de Severidad</label>
+                            <select id="errorSeverity" required>
+                                <option value="bajo">Bajo - Informativo</option>
+                                <option value="medio">Medio - Precaución</option>
+                                <option value="alto">Alto - Atención Inmediata</option>
+                                <option value="crítico">Crítico - Peligro</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="errorTitle">Título</label>
+                        <input type="text" id="errorTitle" placeholder="Título descriptivo del error" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="errorDescription">Descripción</label>
+                        <textarea id="errorDescription" rows="3" placeholder="Descripción detallada del error" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="errorCauses">Causas Posibles</label>
+                        <textarea id="errorCauses" rows="4" placeholder="Una causa por línea" required></textarea>
+                        <small>Ingresa una causa por línea</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="errorSolutions">Soluciones Recomendadas</label>
+                        <textarea id="errorSolutions" rows="4" placeholder="Una solución por línea" required></textarea>
+                        <small>Ingresa una solución por línea</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="errorDiagram">URL del Diagrama (opcional)</label>
+                        <input type="text" id="errorDiagram" placeholder="URL de la imagen de referencia">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Enlaces a Manuales</label>
+                        <div id="manualLinksContainer">
+                            <div class="manual-link-row">
+                                <input type="text" class="manual-link-text" placeholder="Texto del enlace">
+                                <input type="text" class="manual-link-url" placeholder="URL del manual">
+                                <button type="button" class="btn btn-small btn-remove">-</button>
+                            </div>
+                        </div>
+                        <button type="button" id="addLinkBtn" class="btn btn-small">+ Agregar Enlace</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="modal-footer">
+                <div id="modalError" class="modal-error"></div>
+                <button type="button" class="btn btn-cancel" id="cancelErrorBtn">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="saveErrorBtn">Guardar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/admin.js"></script>
+</body>
+</html>

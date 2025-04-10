@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Códigos de Error - Materiales Eléctricos</title>
+    <!-- El CSS lo incorporaremos más adelante -->
+</head>
+<body>
+    <header>
+        <h1>Visor de Códigos de Error</h1>
+        <p>Base de datos de códigos de error de equipos eléctricos industriales</p>
+    </header>
+    
+    <main>
+        <section class="search-section">
+            <h2>Buscador de Errores</h2>
+            
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label for="brandFilter">Marca:</label>
+                    <select id="brandFilter">
+                        <option value="">Todas las marcas</option>
+                        <option value="schneider">Schneider Electric</option>
+                        <option value="siemens">Siemens</option>
+                        <option value="abb">ABB</option>
+                        <option value="ge">General Electric</option>
+                        <option value="rockwell">Rockwell Automation</option>
+                        <option value="eaton">Eaton</option>
+                        <option value="phoenix">Phoenix Contact</option>
+                        <option value="omron">Omron</option>
+                        <option value="mitsubishi">Mitsubishi Electric</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="modelFilter">Modelo/Serie:</label>
+                    <input type="text" id="modelFilter" placeholder="Ej. ATV312, SIMATIC S7...">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="errorCodeFilter">Código de Error:</label>
+                    <input type="text" id="errorCodeFilter" placeholder="Ej. E07, F0001...">
+                </div>
+                
+                <button id="searchBtn">Buscar</button>
+                <button id="resetBtn">Restablecer</button>
+            </div>
+            
+            <!-- Botón de administración (podría estar oculto o protegido en producción) -->
+            <div class="admin-controls">
+                <button id="initDbBtn">Inicializar Base de Datos</button>
+                <span id="dbStatus"></span>
+            </div>
+        </section>
+        
+        <section class="results-section">
+            <h2>Resultados</h2>
+            <div id="resultsCount">0 códigos de error encontrados</div>
+            
+            <div class="results-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Marca</th>
+                            <th>Modelo/Serie</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Los resultados se insertarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="noResults" class="no-results">
+                No se encontraron códigos de error con los criterios especificados.
+            </div>
+            
+            <div class="pagination">
+                <button id="prevPage" disabled>Anterior</button>
+                <span id="currentPage">Página 1 de 1</span>
+                <button id="nextPage" disabled>Siguiente</button>
+            </div>
+        </section>
+        
+        <section id="errorDetail" class="error-detail-section">
+            <h2>Detalles del Error <span id="detailErrorCode"></span></h2>
+            <button id="closeDetail">&times;</button>
+            
+            <div class="error-info">
+                <div class="error-header">
+                    <div class="brand-logo" id="detailBrandLogo"></div>
+                    <div class="error-title">
+                        <h3 id="detailErrorTitle"></h3>
+                        <div class="error-subtitle">
+                            <span id="detailModel"></span> | 
+                            <span id="detailErrorCode2"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="error-body">
+                    <div class="info-group">
+                        <h4>Descripción</h4>
+                        <p id="detailDescription"></p>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h4>Posibles Causas</h4>
+                        <ul id="detailCauses"></ul>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h4>Soluciones Recomendadas</h4>
+                        <ol id="detailSolutions"></ol>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h4>Nivel de Gravedad</h4>
+                        <div id="detailSeverity"></div>
+                    </div>
+                    
+                    <div class="info-group" id="detailDiagramContainer">
+                        <h4>Diagrama o Imagen de Referencia</h4>
+                        <div class="diagram-container">
+                            <img id="detailDiagram" src="" alt="Diagrama de referencia">
+                        </div>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h4>Enlaces al Manual</h4>
+                        <div id="detailLinks"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Base de datos de códigos de error para equipos eléctricos industriales | Última actualización: Abril 10, 2025</p>
+    </footer>
+    
+    <script src="js/errorDatabase.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
