@@ -19,20 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
      * Determina la ruta base según el entorno (GitHub Pages o local)
      */
     function getBasePath() {
-        // Verificar si estamos en GitHub Pages (la URL contiene username.github.io o github.io)
+        // Verificar si estamos en GitHub Pages (la URL contiene github.io)
         const isGitHubPages = window.location.hostname.includes('github.io');
         
         if (isGitHubPages) {
             // En GitHub Pages, necesitamos incluir el nombre del repositorio en la ruta
             const pathSegments = window.location.pathname.split('/');
-            let repoName = '';
             
-            // Si es username.github.io/repo, el nombre del repositorio es el segundo segmento
-            if (pathSegments.length > 1) {
-                repoName = pathSegments[1];
-            }
+            // Eliminar segmentos vacíos
+            const filteredSegments = pathSegments.filter(segment => segment.length > 0);
             
-            console.log("Ejecutando en GitHub Pages. Ruta base ajustada a: /" + repoName);
+            // El primer segmento no vacío es el nombre del repositorio
+            const repoName = filteredSegments.length > 0 ? filteredSegments[0] : '';
+            
+            console.log("Ejecutando en GitHub Pages. Nombre del repositorio:", repoName);
+            console.log("Ruta base ajustada a: /" + repoName);
+            
             return repoName ? '/' + repoName : '';
         } else {
             // En desarrollo local
