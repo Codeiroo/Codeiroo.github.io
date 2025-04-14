@@ -1,5 +1,5 @@
 /**
- * excelLoader.js - Manejo de procesamiento de archivos JSON
+ * errorLoader.js - Manejo de procesamiento de archivos JSON
  * 
  * Este script carga y procesa archivos JSON previamente guardados
  * y muestra sus datos en una tabla dinámica. La primera entrada se toma como títulos de columnas.

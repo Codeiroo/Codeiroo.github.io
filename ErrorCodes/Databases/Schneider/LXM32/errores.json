@@ -1,0 +1,3558 @@
+[
+    {
+      "Error code": "E 1100",
+      "Error class": "0",
+      "Description": "Parameter out of permissible value range",
+      "Cause": "The value entered was outside of the permissible value range for this parameter.",
+      "Correctives": "The entered value must be within the permissible value range."
+    },
+    {
+      "Error code": "E 1101",
+      "Error class": "0",
+      "Description": "Parameter does not exist",
+      "Cause": "Error detected by parameter management: Parameter (index) does not exist.",
+      "Correctives": "Select a different parameter (index)."
+    },
+    {
+      "Error code": "E 1102",
+      "Error class": "0",
+      "Description": "Parameter does not exist",
+      "Cause": "Error detected by parameter management: Parameter (subindex) does not exist.",
+      "Correctives": "Select a different parameter (subindex)."
+    },
+    {
+      "Error code": "E 1103",
+      "Error class": "0",
+      "Description": "Parameter write not permissible (READ only)",
+      "Cause": "Write access to read only parameter.",
+      "Correctives": "Write only to parameters that are not read-only."
+    },
+    {
+      "Error code": "E 1104",
+      "Error class": "0",
+      "Description": "Write access denied (no access authorization)",
+      "Cause": "Parameter only accessible at expert level.",
+      "Correctives": "The write access level expert is required."
+    },
+    {
+      "Error code": "E 1105",
+      "Error class": "0",
+      "Description": "Block Upload/Download not initialized",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1106",
+      "Error class": "0",
+      "Description": "Command not permissible while power stage is active",
+      "Cause": "Command not permissible while the power stage is enabled (operating state Operation Enabled or Quick Stop Active).",
+      "Correctives": "Disable the power stage and repeat the command."
+    },
+    {
+      "Error code": "E 1107",
+      "Error class": "0",
+      "Description": "Access via other interface blocked",
+      "Cause": "Access occupied by another channel (for example: Commissioning software is active and fieldbus access was tried at the same time).",
+      "Correctives": "Verify the channel that blocks access."
+    },
+    {
+      "Error code": "E 1108",
+      "Error class": "0",
+      "Description": "File cannot be uploaded: Incorrect file ID",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1109",
+      "Error class": "1",
+      "Description": "Data stored after a power outage is invalid",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 110A",
+      "Error class": "0",
+      "Description": "System error detected: No bootloader available",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 110B",
+      "Error class": "3",
+      "Description": "Configuration error detected (additional info=Modbus register address)Parameter_SigLatchedBit 30",
+      "Cause": "Error detected during parameter check (for example, reference velocity value for operating mode Profile Position is greater than maximum permissible velocity of drive).",
+      "Correctives": "Value in additional error information shows the Modbus register address of the parameter where the initialization error was detected."
+    },
+    {
+      "Error code": "E 110D",
+      "Error class": "1",
+      "Description": "Basic configuration of drive required after factory setting",
+      "Cause": "The \"First Setup\" (FSU) was not run at all or not completed.",
+      "Correctives": "Perform a First Setup."
+    },
+    {
+      "Error code": "E 110E",
+      "Error class": "0",
+      "Description": "Parameter changed that requires a restart of the drive",
+      "Cause": "Only displayed by the commissioning software.A parameter modification requires the drive to be powered off and on.",
+      "Correctives": "Restart the drive to activate the parameter functionality.See the chapter Parameters for the parameter that requires a restart of the drive."
+    },
+    {
+      "Error code": "E 110F",
+      "Error class": "0",
+      "Description": "Function not available in this type of device",
+      "Cause": "The specific type of device does not support this function or this parameter value.",
+      "Correctives": "Verify that you have the correct device type, in particular type of motor, type of encoder, holding brake."
+    },
+    {
+      "Error code": "E 1110",
+      "Error class": "0",
+      "Description": "Incorrect file ID for upload or download",
+      "Cause": "The specific type of device does not support this kind of file.",
+      "Correctives": "Verify that you have the correct device type or the correct configuration file."
+    },
+    {
+      "Error code": "E 1111",
+      "Error class": "0",
+      "Description": "File transfer not correctly initialized",
+      "Cause": "A previous file transfer has been aborted.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1112",
+      "Error class": "0",
+      "Description": "Locking of configuration denied",
+      "Cause": "An external tool has tried to lock the configuration of the drive for upload or download. This may not work because another tool had already locked the configuration of the drive or the drive is in an operating state that does not allow locking.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1113",
+      "Error class": "0",
+      "Description": "System not locked for configuration transfer",
+      "Cause": "An external tool has tried to transfer the configuration without locking the drive.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1114",
+      "Error class": "4",
+      "Description": "Configuration download abortedParameter_SigLatchedBit 5",
+      "Cause": "During a configuration download, a communication error or an error in the external tool was detected. The configuration was only partially transferred to the drive and might be inconsistent now.",
+      "Correctives": "Power the drive off/on and retry to download the configuration or restore the factory settings."
+    },
+    {
+      "Error code": "E 1115",
+      "Error class": "0",
+      "Description": "Incorrect configuration file formatParameter_WarnLatchedBit 5",
+      "Cause": "An external tool has downloaded a configuration which has an incorrect format.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1116",
+      "Error class": "0",
+      "Description": "Request is processed asynchronously",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1117",
+      "Error class": "0",
+      "Description": "Asynchronous request blocked",
+      "Cause": "Request to a module is blocked because the module is currently processing another request.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1118",
+      "Error class": "0",
+      "Description": "Configuration data incompatible with device",
+      "Cause": "The configuration data contains data from a different device.",
+      "Correctives": "Verify device type including type of power stage."
+    },
+    {
+      "Error code": "E 1119",
+      "Error class": "0",
+      "Description": "Incorrect data length, too many bytes",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 111A",
+      "Error class": "0",
+      "Description": "Incorrect data length, insufficient number of bytes",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 111B",
+      "Error class": "4",
+      "Description": "Configuration download error detected (additional info=Modbus register address)",
+      "Cause": "During a configuration download, one or more configuration values were not accepted by the drive.",
+      "Correctives": "Verify that the configuration file is valid and matches the type and version of the drive. The value in the additional error info shows the Modbus register address of the parameter where the initialization error was detected."
+    },
+    {
+      "Error code": "E 111C",
+      "Error class": "1",
+      "Description": "Not possible to initialize recalculation for scaling",
+      "Cause": "A parameter could not be initialized.",
+      "Correctives": "The address of the parameter that caused the detected error can be read via the parameter _PAR_ScalingError."
+    },
+    {
+      "Error code": "E 111D",
+      "Error class": "3",
+      "Description": "Original state of a parameter cannot be restored after an error was detected during recalculation of parameters with user-defined units.",
+      "Cause": "The drive contained an invalid configuration before the recalculation was started. An error was detected during the recalculation.",
+      "Correctives": "Power the drive off and on again. This may help you to identify the affected parameter(s). Change the parameters as required. Verify that the parameter configuration is valid before starting the recalculation procedure."
+    },
+    {
+      "Error code": "E 111E",
+      "Error class": "1",
+      "Description": "Not possible to recalculate data set",
+      "Cause": "A data set of the operating mode Motion Sequence could not be recalculated.",
+      "Correctives": "The address of the parameter and the number of the data set that caused this condition can be read via the parameter _PAR_ScalingError."
+    },
+    {
+      "Error code": "E 111F",
+      "Error class": "1",
+      "Description": "Recalculation not possible.",
+      "Cause": "Invalid scaling factor.",
+      "Correctives": "Verify that you really want the selected scaling factor. Try a different scaling factor. Before triggering scaling, reset the parameters with user-defined units."
+    },
+    {
+      "Error code": "E 1120",
+      "Error class": "1",
+      "Description": "Recalculation for scaling not possible",
+      "Cause": "A parameter could not be recalculated.",
+      "Correctives": "The address of the parameter that caused this condition can be read via the parameter _PAR_ScalingError."
+    },
+    {
+      "Error code": "E 1121",
+      "Error class": "0",
+      "Description": "Incorrect sequence of steps for scaling (fieldbus)",
+      "Cause": "The recalculation has been started prior to the initialization.",
+      "Correctives": "The recalculation must be started after the initialization."
+    },
+    {
+      "Error code": "E 1122",
+      "Error class": "0",
+      "Description": "Recalculation for scaling not possible",
+      "Cause": "Recalculation for scaling is already running.",
+      "Correctives": "Wait for the running recalculation for scaling to finish."
+    },
+    {
+      "Error code": "E 1123",
+      "Error class": "0",
+      "Description": "Parameter cannot be changed",
+      "Cause": "Recalculation for scaling is running.",
+      "Correctives": "Wait for the running recalculation for scaling to finish."
+    },
+    {
+      "Error code": "E 1124",
+      "Error class": "1",
+      "Description": "Timeout during recalculation for scaling",
+      "Cause": "The time between the initialization of the recalculation and the start of the recalculation has been exceeded (30 seconds).",
+      "Correctives": "Recalculation must be started within 30 seconds after initialization."
+    },
+    {
+      "Error code": "E 1125",
+      "Error class": "1",
+      "Description": "Scaling not possible",
+      "Cause": "The scaling factors for position, velocity or acceleration/deceleration are beyond internal calculation limits.",
+      "Correctives": "Retry with different scaling factors."
+    },
+    {
+      "Error code": "E 1126",
+      "Error class": "0",
+      "Description": "Configuration is blocked by another access channel",
+      "Cause": "-",
+      "Correctives": "Close other access channel (for example, other instance of commissioning software)."
+    },
+    {
+      "Error code": "E 1127",
+      "Error class": "0",
+      "Description": "Invalid key received",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1128",
+      "Error class": "0",
+      "Description": "Special login is required for Manufacturing Test Firmware",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1129",
+      "Error class": "0",
+      "Description": "Test step not yet started",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 112A",
+      "Error class": "0",
+      "Description": "Not possible to enable the capture input",
+      "Cause": "Position capturing has not yet been activated",
+      "Correctives": "Activate position capturing via procedure command \"Probing cycle\" (IDN170)."
+    },
+    {
+      "Error code": "E 112B",
+      "Error class": "0",
+      "Description": "Not possible to configure difference value capturing",
+      "Cause": "Capture input 1 has not been set to both edges (IDN169).",
+      "Correctives": "Set capture input 1 to both edges."
+    },
+    {
+      "Error code": "E 112C",
+      "Error class": "0",
+      "Description": "Not possible to configure difference value capturing",
+      "Cause": "Capture input 2 has not been set to both edges (IDN169).",
+      "Correctives": "Set capture input 2 to both edges."
+    },
+    {
+      "Error code": "E 112E",
+      "Error class": "0",
+      "Description": "Configuration of edges cannot be changed",
+      "Cause": "The configuration of edges cannot be changed because difference value capture is active.",
+      "Correctives": "Deactivate difference value capture."
+    },
+    {
+      "Error code": "E 1130",
+      "Error class": "0",
+      "Description": "Incorrect parameter setting",
+      "Cause": "The parameter ENC_ModeOfMaEnc is set to \"Velocity And Position\". The parameter ErrorResp_PDiffEncM is set to \"Error Class 1\" or \"Error Class 2\". The combination of these settings is invalid.",
+      "Correctives": "Set parameter ErrorResp_PDiffEncM to \"Error Class 3\"."
+    },
+    {
+      "Error code": "E 1300",
+      "Error class": "3",
+      "Description": "Safety function STO activated (STO_A, STO_B)Parameter_SigLatchedBit 10",
+      "Cause": "The safety function STO was activated in the operating state Operation Enabled.",
+      "Correctives": "Verify correct wiring of the inputs of the safety function STO and perform a Fault Reset."
+    },
+    {
+      "Error code": "E 1301",
+      "Error class": "4",
+      "Description": "STO_A and STO_B different levelParameter_SigLatchedBit 11",
+      "Cause": "The levels of the inputs STO_A and STO_B were different for more than 1 second.",
+      "Correctives": "Verify correct wiring of the inputs of the safety function STO."
+    },
+    {
+      "Error code": "E 1302",
+      "Error class": "0",
+      "Description": "Safety function STO activated (STO_A, STO_B)Parameter_WarnLatchedBit 10",
+      "Cause": "Safety function STO was activated while the power stage was disabled.",
+      "Correctives": "Verify correct wiring of the inputs of the safety function STO."
+    },
+    {
+      "Error code": "E 1310",
+      "Error class": "2",
+      "Description": "Frequency of the external reference value signal too highParameter_SigLatchedBit 28",
+      "Cause": "The frequency of the external reference value signals (A/B signals, P/D signals or CW/CCW signals) is higher than the permissible value.",
+      "Correctives": "Verify the frequency of the external reference values. Verify the gear ratio in the operating mode Electronic Gear."
+    },
+    {
+      "Error code": "E 1311",
+      "Error class": "0",
+      "Description": "The selected signal input function or signal output function cannot be configured",
+      "Cause": "The selected signal input function or signal output function cannot be used in the selected operating mode.",
+      "Correctives": "Select another function or change the operating mode."
+    },
+    {
+      "Error code": "E 1312",
+      "Error class": "0",
+      "Description": "Limit switch or reference switch signal not defined for signal input function",
+      "Cause": "Reference movements require limit switches. These limit switches are not assigned to inputs.",
+      "Correctives": "Assign the signal input functions Positive Limit Switch, Negative Limit Switch and Reference Switch."
+    },
+    {
+      "Error code": "E 1313",
+      "Error class": "0",
+      "Description": "Configured debounce time not possible for this signal input function",
+      "Cause": "The signal input function does not support the selected debounce time.",
+      "Correctives": "Set the debounce time to a valid value."
+    },
+    {
+      "Error code": "E 1314",
+      "Error class": "4",
+      "Description": "At least two inputs have the same signal input function.",
+      "Cause": "The same signal input function has been assigned to at least two inputs.",
+      "Correctives": "Reconfigure the inputs."
+    },
+    {
+      "Error code": "E 1315",
+      "Error class": "0",
+      "Description": "Frequency of reference value signal is too high.Parameter_WarnLatchedBit 28",
+      "Cause": "The frequency of the pulse signal (A/B, Pulse/Direction, CW/CCW) exceeds the specified range. Received pulses may be lost.",
+      "Correctives": "Adapt the frequency of the reference value signal to match the input specification of the drive. Also adapt the gear ratio in the operating mode Electronic Gear to the application requirements (position accuracy and velocity)."
+    },
+    {
+      "Error code": "E 1316",
+      "Error class": "1",
+      "Description": "Position capture via signal input currently not possibleParameter_SigLatchedBit 28",
+      "Cause": "Position capture is already being used.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1317",
+      "Error class": "0",
+      "Description": "Interference at PTI inputParameter_WarnLatchedBit 28",
+      "Cause": "Interfering pulses or impermissible edge transitions (A and B signal simultaneously) have been detected.",
+      "Correctives": "Verify cable specifications, shield connection and EMC."
+    },
+    {
+      "Error code": "E 1318",
+      "Error class": "0",
+      "Description": "The selected type of usage of the analog inputs is not possible.",
+      "Cause": "At least two analog inputs are configured with the same type of usage.",
+      "Correctives": "Reconfigure the analog inputs."
+    },
+    {
+      "Error code": "E 1501",
+      "Error class": "4",
+      "Description": "System error detected: DriveCom state machine indeterminable state",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1502",
+      "Error class": "4",
+      "Description": "System error detected: HWL low-level state machine indeterminable state",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1503",
+      "Error class": "1",
+      "Description": "Quick Stop triggered via fieldbus",
+      "Cause": "A Quick Stop has been triggered via the fieldbus. The Quick Stop option code has been set to -1 or -2 which causes the drive to transition to the operating state 9 Fault instead of the operating state 7 Quick Stop Active.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1504",
+      "Error class": "2",
+      "Description": "Power stage cannot be enabledParameter_SigLatchedBit 4",
+      "Cause": "The signal input function \"Servo On\" has been assigned to an input. However, there is a 0 level the signal input.",
+      "Correctives": "There must be a 1 level at the signal input."
+    },
+    {
+      "Error code": "E 1600",
+      "Error class": "0",
+      "Description": "Oscilloscope: No additional data available",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1601",
+      "Error class": "0",
+      "Description": "Oscilloscope: Parameterization incomplete",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1602",
+      "Error class": "0",
+      "Description": "Oscilloscope: Trigger variable not defined",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1606",
+      "Error class": "0",
+      "Description": "Logging still active",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1607",
+      "Error class": "0",
+      "Description": "Logging: No trigger defined",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1608",
+      "Error class": "0",
+      "Description": "Logging: Invalid trigger option",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1609",
+      "Error class": "0",
+      "Description": "Logging: No channel selected",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 160A",
+      "Error class": "0",
+      "Description": "Logging: No data available",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 160B",
+      "Error class": "0",
+      "Description": "Parameter cannot be logged",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 160C",
+      "Error class": "1",
+      "Description": "Autotuning: Moment of inertia outside permissible range",
+      "Cause": "The load inertia is too high.",
+      "Correctives": "Verify that the system can easily be moved.Verify the load.Use a differently rated drive."
+    },
+    {
+      "Error code": "E 160E",
+      "Error class": "1",
+      "Description": "Autotuning: Test movement could not be started",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 160F",
+      "Error class": "1",
+      "Description": "Autotuning: Power stage cannot be enabled",
+      "Cause": "Autotuning was not started in the operating state Ready To Switch On.",
+      "Correctives": "Start Autotuning when the drive is in the operating state Ready To Switch On."
+    },
+    {
+      "Error code": "E 1610",
+      "Error class": "1",
+      "Description": "Autotuning: Processing stopped",
+      "Cause": "Autotuning stopped by user command or by detected error (see additional error message in error memory, for example, DC bus undervoltage, limit switches triggered)",
+      "Correctives": "Remove the cause of the stop and restart Autotuning."
+    },
+    {
+      "Error code": "E 1611",
+      "Error class": "1",
+      "Description": "System error detected: Parameter could not be written during Autotuning (additional info=Modbus register address)",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1612",
+      "Error class": "1",
+      "Description": "System error detected: Parameter could not be read during Autotuning",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1613",
+      "Error class": "1",
+      "Description": "Autotuning: Maximum permissible movement range exceededParameter_SigLatchedBit 2",
+      "Cause": "The movement exceeded the adjusted movement range during Autotuning.",
+      "Correctives": "Increase the movement range value or disable movement range monitoring by setting AT_DIS = 0."
+    },
+    {
+      "Error code": "E 1614",
+      "Error class": "0",
+      "Description": "Autotuning: Already active",
+      "Cause": "Autotuning has been started twice simultaneously or an Autotuning parameter is modified during Autotuning (parameter AT_dis and AT_dir).",
+      "Correctives": "Wait for Autotuning to finish before restarting Autotuning."
+    },
+    {
+      "Error code": "E 1615",
+      "Error class": "0",
+      "Description": "Autotuning: This parameter cannot be changed while Autotuning is active",
+      "Cause": "Parameter AT_gain or AT_J are written during Autotuning.",
+      "Correctives": "Wait for Autotuning to finish before changing the parameter."
+    },
+    {
+      "Error code": "E 1617",
+      "Error class": "1",
+      "Description": "Autotuning: Friction torque or load torque too great",
+      "Cause": "The current limit has been reached (parameter CTRL_I_max).",
+      "Correctives": "Verify that the system can easily be moved.Verify the load.Use a differently rated drive."
+    },
+    {
+      "Error code": "E 1618",
+      "Error class": "1",
+      "Description": "Autotuning: Optimization aborted",
+      "Cause": "The internal Autotuning sequence has not been finished, there may have been a following error.",
+      "Correctives": "See the additional information provided in the error memory."
+    },
+    {
+      "Error code": "E 1619",
+      "Error class": "0",
+      "Description": "Autotuning: Velocity jump in parameter AT_n_ref is not sufficient",
+      "Cause": "Parameter AT_n_ref < 2 * AT_n_tolerance.The drive only checks this for the first velocity jump.",
+      "Correctives": "Modify the parameter AT_n_ref or AT_n_tolerance to meet the required condition."
+    },
+    {
+      "Error code": "E 1620",
+      "Error class": "1",
+      "Description": "Autotuning: Load torque too high",
+      "Cause": "Product rating is not suitable for the machine load.Detected machine inertia is too high compared to the inertia of the motor.",
+      "Correctives": "Reduce load, verify rating."
+    },
+    {
+      "Error code": "E 1621",
+      "Error class": "1",
+      "Description": "System error detected: Calculation error",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1622",
+      "Error class": "0",
+      "Description": "Autotuning: Not possible to perform Autotuning",
+      "Cause": "Autotuning can only be performed if no operating mode is active.",
+      "Correctives": "Terminate the active operating mode or disable the power stage."
+    },
+    {
+      "Error code": "E 1623",
+      "Error class": "1",
+      "Description": "Autotuning: HALT request has stopped the autotuning process",
+      "Cause": "Autotuning can only be performed if no operating mode is active.",
+      "Correctives": "Terminate the active operating mode or disable the power stage."
+    },
+    {
+      "Error code": "E 1A00",
+      "Error class": "0",
+      "Description": "System error detected: FIFO memory overflow",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1A01",
+      "Error class": "3",
+      "Description": "Motor has been changed (different type of motor)Parameter_SigLatchedBit 16",
+      "Cause": "Detected motor type is different from previously detected motor.",
+      "Correctives": "Confirm the change."
+    },
+    {
+      "Error code": "E 1A03",
+      "Error class": "4",
+      "Description": "System error detected: Hardware and firmware do not match",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1B00",
+      "Error class": "3",
+      "Description": "System error detected: Incorrect parameters for motor and power stageParameter_SigLatchedBit 30",
+      "Cause": "Incorrect manufacturer parameter value (data) non-volatile memory of device.",
+      "Correctives": "Replace device."
+    },
+    {
+      "Error code": "E 1B02",
+      "Error class": "3",
+      "Description": "Target value too high.Parameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1B04",
+      "Error class": "2",
+      "Description": "Product of encoder simulation resolution and the maximum velocity is too highParameter_SigLatchedBit 30",
+      "Cause": "Value in parameter CTRL_v_max or resolution or the encoder simulation ESIM_scale are too high.",
+      "Correctives": "Reduce the resolution of the encoder simulation or the maximum velocity in parameter CTRL_v_max."
+    },
+    {
+      "Error code": "E 1B05",
+      "Error class": "2",
+      "Description": "Error detected during parameter switchingParameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1B06",
+      "Error class": "3",
+      "Description": "Wake & shake cannot be started.Parameter_SigLatchedBit 30",
+      "Cause": "Motor velocity is too high at the beginning of the wake and shake procedure.",
+      "Correctives": "Verify that the motor is at a standstill at the beginning wake and shake procedure."
+    },
+    {
+      "Error code": "E 1B08",
+      "Error class": "3",
+      "Description": "Position difference during the wake and shake procedure is too high.",
+      "Cause": "Incorrect motor data entered by user (especially motor resistance, motor inertia (in case of rotary motors) or motor mass (in case of linear motors)).Incorrect setting for parameter WakeAndShakeGain.",
+      "Correctives": "Verify motor data.Verify setting of parameter WakeAndShakeGain."
+    },
+    {
+      "Error code": "E 1B0B",
+      "Error class": "1",
+      "Description": "The operating state at the beginning of the commutation offset identification must be Ready To Switch On.",
+      "Cause": "-",
+      "Correctives": "Set the operating state to Ready To Switch On and restart commutation offset identification."
+    },
+    {
+      "Error code": "E 1B0C",
+      "Error class": "3",
+      "Description": "Motor velocity too high.",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 1B0D",
+      "Error class": "3",
+      "Description": "Velocity value determined by velocity observer is incorrect",
+      "Cause": "Incorrect system inertia for velocity observer calculations.Incorrect velocity observer dynamics.System inertia changes during operation. In this case, operation with velocity observer is not possible and the velocity observer must be deactivated.",
+      "Correctives": "Change the velocity observer dynamics via the parameter CTRL_SpdObsDyn.Change the system inertia used for velocity observer calculations via the parameter CTRL_SpdObsInert.If the detected error persists, deactivate the velocity observer."
+    },
+    {
+      "Error code": "E 1B0E",
+      "Error class": "3",
+      "Description": "Not possible to determine the commutation angle at the end of the wake and shake procedure",
+      "Cause": "Incorrect motor data, for example motor resistance, motor inertia (in case of rotary motors) or motor mass (in case of linear motors).Incorrect setting for parameter WakeAndShakeGain.Holding brake (if available) not properly wired.",
+      "Correctives": "Verify correct motor data.Verify setting of parameter WakesAndShakeGain.Verify correct wiring of holding brake."
+    },
+    {
+      "Error code": "E 1B0F",
+      "Error class": "3",
+      "Description": "Velocity deviation too high",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 2300",
+      "Error class": "3",
+      "Description": "Power stage overcurrentParameter_SigLatchedBit 27",
+      "Cause": "Motor short circuit and disabling of the power stage.Motor phases are inverted.",
+      "Correctives": "Verify the motor power connection."
+    },
+    {
+      "Error code": "E 2301",
+      "Error class": "3",
+      "Description": "Braking resistor overcurrentParameter_SigLatchedBit 27",
+      "Cause": "Braking resistor short circuit.",
+      "Correctives": "If you use the internal braking resistor, contact your Schneider Electric service representative.If you use an external braking resistor, verify correct wiring and rating of the braking resistor."
+    },
+    {
+      "Error code": "E 3100",
+      "Error class": "par.",
+      "Description": "Missing mains supply, undervoltage mains supply or overvoltage mains supplyParameter_SigLatchedBit 15",
+      "Cause": "Missing phase(s) for more than 50 ms.Mains voltage is out of range.Mains frequency is out of range.",
+      "Correctives": "Verify that the values of the mains power supply network comply with the technical data."
+    },
+    {
+      "Error code": "E 3200",
+      "Error class": "3",
+      "Description": "DC bus overvoltageParameter_SigLatchedBit 14",
+      "Cause": "Excessive regeneration during deceleration.",
+      "Correctives": "Verify correct deceleration ramp, rating of drive and braking resistor."
+    },
+    {
+      "Error code": "E 3201",
+      "Error class": "3",
+      "Description": "DC bus undervoltage (shutdown threshold)Parameter_SigLatchedBit 13",
+      "Cause": "Power supply outage, insufficient power supply.",
+      "Correctives": "Verify mains supply."
+    },
+    {
+      "Error code": "E 3202",
+      "Error class": "2",
+      "Description": "DC bus undervoltage (Quick Stop threshold)Parameter_SigLatchedBit 13",
+      "Cause": "Power supply outage, insufficient power supply.",
+      "Correctives": "Verify mains supply."
+    },
+    {
+      "Error code": "E 3206",
+      "Error class": "0",
+      "Description": "Undervoltage DC bus, missing mains supply, undervoltage mains supply or overvoltage mains supplyParameter_WarnLatchedBit 13",
+      "Cause": "Missing phase(s) for more than 50 ms.Mains voltage is out of range.Mains frequency is out of range.Mains voltage and setting of parameter MON_MainsVolt do not match (for example, mains voltage is 230 V and MON_MainsVolt is set to 115 V).",
+      "Correctives": "Verify that the values of the mains power supply network comply with the technical data.Verify the settings of the parameter for reduced mains voltage."
+    },
+    {
+      "Error code": "E 3300",
+      "Error class": "0",
+      "Description": "The winding voltage of the motor is lower than the nominal supply voltage of the drive",
+      "Cause": "If the winding voltage of the motor is lower than the nominal supply voltage of the drive, this may result in motor overtemperature due to high current ripple.",
+      "Correctives": "Verify the motor temperature. In the case of overtemperature, use a motor with a higher winding voltage or use a drive with a lower nominal supply voltage."
+    },
+    {
+      "Error code": "E 4100",
+      "Error class": "3",
+      "Description": "Power stage overtemperatureParameter_SigLatchedBit 18",
+      "Cause": "Excessively high ambient temperature due to, for example, dust.",
+      "Correctives": "Improve heat dissipation.If a fan is installed, verify correct operation of the fan."
+    },
+    {
+      "Error code": "E 4101",
+      "Error class": "0",
+      "Description": "Power stage overtemperatureParameter_WarnLatchedBit 18",
+      "Cause": "Excessively high ambient temperature due to, for example, dust.",
+      "Correctives": "Improve heat dissipation.If a fan is installed, verify correct operation of the fan."
+    },
+    {
+      "Error code": "E 4102",
+      "Error class": "0",
+      "Description": "Power stage overload (I2t)Parameter_WarnLatchedBit 30",
+      "Cause": "The current has exceeded the nominal value for an extended period of time.",
+      "Correctives": "Verify rating, reduce cycle time."
+    },
+    {
+      "Error code": "E 4200",
+      "Error class": "3",
+      "Description": "Device overtemperatureParameter_SigLatchedBit 18",
+      "Cause": "Excessively high ambient temperature due to, for example, dust.",
+      "Correctives": "Improve heat dissipation.If a fan is installed, verify correct operation of the fan."
+    },
+    {
+      "Error code": "E 4300",
+      "Error class": "2",
+      "Description": "Motor overtemperatureParameter_SigLatchedBit 17",
+      "Cause": "Ambient temperature is too high.Duty cycle is too high.Motor not properly mounted (thermal isolation).Motor overload.",
+      "Correctives": "Verify motor installation: The heat must be dissipated via the mounting surface.Reduce ambient temperature.Provide ventilation."
+    },
+    {
+      "Error code": "E 4301",
+      "Error class": "0",
+      "Description": "Motor overtemperatureParameter_WarnLatchedBit 17",
+      "Cause": "Ambient temperature is too high.Duty cycle is too high.Motor not properly mounted (thermal isolation).Motor overload.",
+      "Correctives": "Verify motor installation: The heat must be dissipated via the mounting surface.Reduce ambient temperature.Provide ventilation."
+    },
+    {
+      "Error code": "E 4302",
+      "Error class": "0",
+      "Description": "Motor overload (I2t)Parameter_WarnLatchedBit 31",
+      "Cause": "The current has exceeded the nominal value for an extended period of time.",
+      "Correctives": "Verify that the system can easily be moved.Verify the load.Use a differently sized motor, if necessary."
+    },
+    {
+      "Error code": "E 4303",
+      "Error class": "0",
+      "Description": "No motor temperature monitoring",
+      "Cause": "The temperature parameters (in electronic nameplate of motor, non-volatile memory of encoder) are unavailable or invalid; parameter A12 is equal to 0.",
+      "Correctives": "Contact your Schneider Electric service representative.Replace motor."
+    },
+    {
+      "Error code": "E 4304",
+      "Error class": "0",
+      "Description": "The encoder does not support motor temperature monitoring.",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 4402",
+      "Error class": "0",
+      "Description": "Braking resistor overload (I2t > 75%)Parameter_WarnLatchedBit 29",
+      "Cause": "Regeneration energy too high.External loads too high.Motor velocity too high.Deceleration too fast.Insufficient braking resistor.",
+      "Correctives": "Reduce load, velocity, deceleration.Verify correct braking resistor rating."
+    },
+    {
+      "Error code": "E 4403",
+      "Error class": "par.",
+      "Description": "Braking resistor overload (I2t > 100%)",
+      "Cause": "Regeneration energy too high.External loads too high.Motor velocity too high.Deceleration too fast.Insufficient braking resistor.",
+      "Correctives": "Reduce load, velocity, deceleration.Verify correct braking resistor rating."
+    },
+    {
+      "Error code": "E 4404",
+      "Error class": "0",
+      "Description": "Overload of transistor for braking resistorParameter_WarnLatchedBit 28",
+      "Cause": "Regeneration energy too high.External loads too high.Deceleration too fast.",
+      "Correctives": "Reduce load and/or deceleration."
+    },
+    {
+      "Error code": "E 5101",
+      "Error class": "0",
+      "Description": "Modbus power supply missing",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5102",
+      "Error class": "4",
+      "Description": "Motor encoder supply voltageParameter_SigLatchedBit 16",
+      "Cause": "Encoder power supply is not within permissible range of 8 V to 12 V.",
+      "Correctives": "Replace the device.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 5200",
+      "Error class": "4",
+      "Description": "Error detected at connection to motor encoderParameter_SigLatchedBit 16",
+      "Cause": "Encoder not properly connected, EMC",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5201",
+      "Error class": "4",
+      "Description": "Error detected in motor encoder communicationParameter_SigLatchedBit 16",
+      "Cause": "Encoder not properly connected, EMC",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5202",
+      "Error class": "4",
+      "Description": "Motor encoder is not supportedParameter_SigLatchedBit 16",
+      "Cause": "Incompatible encoder connected.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5203",
+      "Error class": "4",
+      "Description": "Error detected in connection motor encoderParameter_SigLatchedBit 16",
+      "Cause": "Encoder not properly connected",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5204",
+      "Error class": "3",
+      "Description": "Connection to motor encoder lostParameter_SigLatchedBit 16",
+      "Cause": "Encoder not properly connected",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5206",
+      "Error class": "0",
+      "Description": "Communication error detected in encoderParameter_WarnLatchedBit 16",
+      "Cause": "Communication channel to encoder is subject to interference.",
+      "Correctives": "Verify EMC measures."
+    },
+    {
+      "Error code": "E 5207",
+      "Error class": "1",
+      "Description": "Function is not supported",
+      "Cause": "The hardware revision does not support the function.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5302",
+      "Error class": "4",
+      "Description": "The motor requires a PWM frequency (16kHz) which the power stage does not support.",
+      "Cause": "The motor only works with a PWM frequency of 16 kHz (motor nameplate entry). However, the power stage does not support this PWM frequency.",
+      "Correctives": "Use a motor that works with a PWM frequency of 8 kHz.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 5430",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory read errorParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5431",
+      "Error class": "3",
+      "Description": "System error: Nonvolatile memory write errorParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5432",
+      "Error class": "3",
+      "Description": "System error: Nonvolatile memory state machineParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5433",
+      "Error class": "3",
+      "Description": "System error: Nonvolatile memory address errorParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5434",
+      "Error class": "3",
+      "Description": "System error: Nonvolatile memory incorrect data lengthParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5435",
+      "Error class": "4",
+      "Description": "System error: Nonvolatile memory not formattedParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5436",
+      "Error class": "4",
+      "Description": "System error: Nonvolatile memory incompatible structureParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5437",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (manufacturer data)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5438",
+      "Error class": "3",
+      "Description": "System error detected: Nonvolatile memory checksum error (user parameters)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5439",
+      "Error class": "3",
+      "Description": "System error detected: Nonvolatile memory checksum error (fieldbus parameters)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 543B",
+      "Error class": "4",
+      "Description": "System error detected: No valid manufacturer dataParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 543E",
+      "Error class": "3",
+      "Description": "System error detected: Nonvolatile memory checksum error (NoInit parameter)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 543F",
+      "Error class": "3",
+      "Description": "System error detected: Nonvolatile memory checksum error (motor parameters)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5441",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (global control loop parameter set)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5442",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (control loop parameter set 1)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5443",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (control loop parameter set 2)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5444",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (NoReset parameter)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5445",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (hardware information)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5446",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (for power outage data)Parameter_SigLatchedBit 29",
+      "Cause": "Internal nonvolatile memory not operative.",
+      "Correctives": "Restart the drive. If the detected error persists, contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 5448",
+      "Error class": "2",
+      "Description": "System error detected: Communication with memory cardParameter_SigLatchedBit 20",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5449",
+      "Error class": "2",
+      "Description": "System error detected: Memory card bus is busyParameter_SigLatchedBit 20",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 544A",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory checksum error (administration data)Parameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 544C",
+      "Error class": "4",
+      "Description": "System error detected: Nonvolatile memory is write-protectedParameter_SigLatchedBit 29",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 544D",
+      "Error class": "2",
+      "Description": "System error detected: Memory cardParameter_SigLatchedBit 20",
+      "Cause": "The last saving procedure may not have been successful; the memory card may be inoperative.",
+      "Correctives": "Retry saving the data.Replace the memory card."
+    },
+    {
+      "Error code": "E 544E",
+      "Error class": "2",
+      "Description": "System error detected: Memory cardParameter_SigLatchedBit 20",
+      "Cause": "The last saving procedure may not have been successful; the memory card may be inoperative.",
+      "Correctives": "Retry saving the data.Replace the memory card."
+    },
+    {
+      "Error code": "E 544F",
+      "Error class": "2",
+      "Description": "System error detected: Memory cardParameter_SigLatchedBit 20",
+      "Cause": "The last saving procedure may not have been successful; the memory card may be inoperative.",
+      "Correctives": "Retry saving the data.Replace the memory card."
+    },
+    {
+      "Error code": "E 5451",
+      "Error class": "0",
+      "Description": "System error detected: No memory card availableParameter_WarnLatchedBit 20",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5452",
+      "Error class": "2",
+      "Description": "System error detected: Data on memory card and device do not matchParameter_SigLatchedBit 20",
+      "Cause": "Different type of device.Different type of power stage.Data on memory card does not match firmware version of device.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5453",
+      "Error class": "2",
+      "Description": "System error detected: Incompatible data on the memory cardParameter_SigLatchedBit 20",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5454",
+      "Error class": "2",
+      "Description": "System error detected: Capacity of detected memory card insufficientParameter_SigLatchedBit 20",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5455",
+      "Error class": "2",
+      "Description": "System error detected: Memory card not formattedParameter_SigLatchedBit 20",
+      "Cause": "-",
+      "Correctives": "Update memory card (drive to card)."
+    },
+    {
+      "Error code": "E 5456",
+      "Error class": "1",
+      "Description": "System error detected: Memory card is write-protectedParameter_SigLatchedBit 20",
+      "Cause": "The memory card has been write-protected.",
+      "Correctives": "Remove memory card or disable write protection."
+    },
+    {
+      "Error code": "E 5457",
+      "Error class": "2",
+      "Description": "System error detected: Incompatible memory cardParameter_SigLatchedBit 20",
+      "Cause": "Memory card capacity is insufficient.",
+      "Correctives": "Replace memory card"
+    },
+    {
+      "Error code": "E 5462",
+      "Error class": "0",
+      "Description": "Memory card implicitly written by the deviceParameter_WarnLatchedBit 20",
+      "Cause": "The content of the memory card and the content of the nonvolatile memory are not identical.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 546C",
+      "Error class": "0",
+      "Description": "Nonvolatile memory file not available",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5600",
+      "Error class": "3",
+      "Description": "Motor connection phase error detectedParameter_SigLatchedBit 26",
+      "Cause": "Missing motor phase.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 5603",
+      "Error class": "3",
+      "Description": "Commutation error detected (additional info=Internal_DeltaQuep)Parameter_SigLatchedBit 26",
+      "Cause": "Incorrect wiring of motor cable.Encoder signals are lost or subject to interference.The load torque is greater than the motor torque.The encoder nonvolatile memory contains incorrect data (encoder phase offset is incorrect).Motor is not adjusted.",
+      "Correctives": "Verify motor phases, verify encoder wiring.Improve EMC, verify grounding and shield connection.Use a differently sized motor that can withstand the load torque.Verify the motor data.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 6102",
+      "Error class": "4",
+      "Description": "System error detected: Internal software errorParameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6103",
+      "Error class": "4",
+      "Description": "System error detected: System stack overflowParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6104",
+      "Error class": "0",
+      "Description": "System error detected: Division by zero (internal)",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6105",
+      "Error class": "0",
+      "Description": "System error detected: Overflow during 32 bit calculation (internal)",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6106",
+      "Error class": "4",
+      "Description": "System error detected: Size of data interface does not matchParameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6107",
+      "Error class": "0",
+      "Description": "Parameter outside of value range (calculation error detected)",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6108",
+      "Error class": "0",
+      "Description": "Function not available",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6109",
+      "Error class": "0",
+      "Description": "System error detected: Internal range exceeded",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 610A",
+      "Error class": "2",
+      "Description": "System error detected: Calculated value cannot be represented as a 32 bit value",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 610D",
+      "Error class": "0",
+      "Description": "Error detected in selection parameter",
+      "Cause": "Incorrect parameter value selected.",
+      "Correctives": "Verify the value to be written."
+    },
+    {
+      "Error code": "E 610E",
+      "Error class": "4",
+      "Description": "System error detected: 24 VDC below undervoltage threshold for shutdown",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 610F",
+      "Error class": "4",
+      "Description": "System error detected: Internal timer basis missing (Timer0)Parameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6111",
+      "Error class": "2",
+      "Description": "System error detected: Memory area lockedParameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6112",
+      "Error class": "2",
+      "Description": "System error detected: Out of memoryParameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6113",
+      "Error class": "1",
+      "Description": "System error detected: Calculated value cannot be represented as a 16 bit value",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6114",
+      "Error class": "4",
+      "Description": "System error detected: Impermissible function call from interrupt service routine",
+      "Cause": "Incorrect programming",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 6117",
+      "Error class": "0",
+      "Description": "Holding brake cannot be released manually.",
+      "Cause": "The holding brake cannot be released manually because it is still applied manually.",
+      "Correctives": "First, switch from applying the holding brake manually to Automatic, then to releasing the holding brake manually."
+    },
+    {
+      "Error code": "E 7100",
+      "Error class": "4",
+      "Description": "System error detected: Invalid power stage dataParameter_SigLatchedBit 30",
+      "Cause": "Error detected in power stage data stored in device (incorrect CRC), error detected in internal memory data.",
+      "Correctives": "Contact your Schneider Electric service representative or replace the device."
+    },
+    {
+      "Error code": "E 7110",
+      "Error class": "2",
+      "Description": "System error detected: Internal braking resistor",
+      "Cause": "Internal braking resistor is inoperative or not connected.",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7111",
+      "Error class": "0",
+      "Description": "Parameter cannot be changed because the external braking resistor is active.",
+      "Cause": "An attempt is made to change one of the parameters RESext_ton, RESext_P or RESext_R even though the external braking resistor is active.",
+      "Correctives": "Verify that the external braking resistor is not active if one of the parameters RESext_ton, RESext_P or RESext_R has to be changed."
+    },
+    {
+      "Error code": "E 7112",
+      "Error class": "2",
+      "Description": "No external braking resistor connected",
+      "Cause": "External braking resistor activated (Parameter RESint_ext), but no external resistor is detected.",
+      "Correctives": "Verify wiring of the external braking resistor. Verify correct resistance."
+    },
+    {
+      "Error code": "E 7120",
+      "Error class": "4",
+      "Description": "Invalid motor dataParameter_SigLatchedBit 16",
+      "Cause": "Motor data is incorrect (incorrect CRC).",
+      "Correctives": "Contact your Schneider Electric service representative or replace the motor."
+    },
+    {
+      "Error code": "E 7121",
+      "Error class": "2",
+      "Description": "System error detected: Error in motor encoder communicationParameter_SigLatchedBit 16",
+      "Cause": "EMC, detailed information can be found in the error memory that contains the error code of the encoder.",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7122",
+      "Error class": "4",
+      "Description": "Invalid motor dataParameter_SigLatchedBit 30",
+      "Cause": "Error detected in motor data stored in motor encoder, error detected in internal memory data.",
+      "Correctives": "Contact your Schneider Electric service representative or replace the motor."
+    },
+    {
+      "Error code": "E 7124",
+      "Error class": "4",
+      "Description": "System error detected: Motor encoder inoperativeParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative or replace the motor."
+    },
+    {
+      "Error code": "E 7125",
+      "Error class": "4",
+      "Description": "System error detected: Length specification for user data too greatParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7129",
+      "Error class": "0",
+      "Description": "System error detected: Motor encoderParameter_WarnLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 712C",
+      "Error class": "0",
+      "Description": "System error detected: Communication with encoder not possibleParameter_WarnLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 712D",
+      "Error class": "4",
+      "Description": "Electronic motor nameplate not foundParameter_SigLatchedBit 16",
+      "Cause": "Incorrect motor data (incorrect CRC).Motor without electronic motor nameplate (for example, SER motor)",
+      "Correctives": "Contact your Schneider Electric service representative or replace the motor."
+    },
+    {
+      "Error code": "E 712F",
+      "Error class": "0",
+      "Description": "No data segment of the electronic motor nameplate",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7132",
+      "Error class": "0",
+      "Description": "System error detected: Motor configuration cannot be written",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7133",
+      "Error class": "0",
+      "Description": "Not possible to write motor configuration",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7134",
+      "Error class": "4",
+      "Description": "Incomplete motor configurationParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7135",
+      "Error class": "4",
+      "Description": "Format is not supportedParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7136",
+      "Error class": "4",
+      "Description": "Incorrect encoder type selected with parameter MotEnctypeParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7137",
+      "Error class": "4",
+      "Description": "Error detected during the internal conversion of the motor configurationParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7138",
+      "Error class": "4",
+      "Description": "Parameter of the motor configuration out of permissible rangeParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7139",
+      "Error class": "0",
+      "Description": "Encoder offset: Data segment in encoder is incorrect.",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 713A",
+      "Error class": "3",
+      "Description": "Adjustment value of the encoder of the third party motor has not yet been determined.Parameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7200",
+      "Error class": "4",
+      "Description": "System error detected: Calibration analog/digital converter during manufacturing / incorrect BLE fileParameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7320",
+      "Error class": "4",
+      "Description": "System error detected: Invalid encoder parameterParameter_SigLatchedBit 16",
+      "Cause": "Communication channel (Hiperface) to encoder is subject to interference, motor encoder has not been factory-parameterized.",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7321",
+      "Error class": "3",
+      "Description": "Timeout reading the absolute position from the encoderParameter_SigLatchedBit 16",
+      "Cause": "Communication channel (Hiperface) to encoder is subject to interference or motor encoder is inoperative.",
+      "Correctives": "Verify EMC measures."
+    },
+    {
+      "Error code": "E 7327",
+      "Error class": "0",
+      "Description": "Error bit set in Hiperface answerParameter_WarnLatchedBit 16",
+      "Cause": "Insufficient EMC.",
+      "Correctives": "Verify wiring (shield)."
+    },
+    {
+      "Error code": "E 7328",
+      "Error class": "4",
+      "Description": "Motor encoder: Position evaluation error detectedParameter_SigLatchedBit 16",
+      "Cause": "Encoder has detected incorrect position evaluation.",
+      "Correctives": "Contact your Schneider Electric service representative or replace the motor."
+    },
+    {
+      "Error code": "E 7329",
+      "Error class": "0",
+      "Description": "Motor encoder Warn signalParameter_WarnLatchedBit 16",
+      "Cause": "EMC.",
+      "Correctives": "Contact your Schneider Electric service representative or replace the motor."
+    },
+    {
+      "Error code": "E 7330",
+      "Error class": "4",
+      "Description": "System error detected: Motor encoder (Hiperface)Parameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7331",
+      "Error class": "4",
+      "Description": "System error detected: Motor encoder initializationParameter_SigLatchedBit 30",
+      "Cause": "-",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7335",
+      "Error class": "0",
+      "Description": "Communication with motor encoder activeParameter_WarnLatchedBit 16",
+      "Cause": "Command is being processed or communication may be disturbed (EMC).",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 733F",
+      "Error class": "4",
+      "Description": "Amplitude of encoder analog signals too lowParameter_SigLatchedBit 16",
+      "Cause": "Incorrect encoder wiring.Encoder not connected.Encoder signals subject to EMC interference (shield connection, cabling, etc.).",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7340",
+      "Error class": "3",
+      "Description": "Reading of absolute position abortedParameter_SigLatchedBit 16",
+      "Cause": "Communication channel (Hiperface) to encoder is subject to interference.Encoder (in motor) is inoperative.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7341",
+      "Error class": "0",
+      "Description": "Encoder overtemperatureParameter_WarnLatchedBit 16",
+      "Cause": "The maximum permissible duty cycle is exceeded.The motor was not mounted properly, for example, it is thermally isolated.The motor is blocked so that more current is used than under normal conditions.The ambient temperature is too high.",
+      "Correctives": "Reduce the duty cycle, for example, reduce acceleration.Supply additional cooling, for example, use a fan.Mount the motor in such a way as to increase thermal conductivity.Use a differently rated drive or motor.Replace the motor."
+    },
+    {
+      "Error code": "E 7342",
+      "Error class": "2",
+      "Description": "Encoder overtemperatureParameter_SigLatchedBit 16",
+      "Cause": "The maximum permissible duty cycle is exceeded.The motor was not mounted properly, for example, it is thermally isolated.The motor is blocked so that more current is used than under normal conditions.The ambient temperature is too high.",
+      "Correctives": "Reduce the duty cycle, for example, reduce acceleration.Supply additional cooling, for example, use a fan.Mount the motor in such a way as to increase thermal conductivity.Use a differently rated drive or motor.Replace the motor."
+    },
+    {
+      "Error code": "E 7343",
+      "Error class": "0",
+      "Description": "Absolute position is different from incremental positionParameter_WarnLatchedBit 16",
+      "Cause": "Encoder is subject to EMC interference.Motor encoder is inoperative.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7344",
+      "Error class": "3",
+      "Description": "Absolute position is different from incremental positionParameter_SigLatchedBit 16",
+      "Cause": "Encoder is subject to EMC interference.Motor encoder is inoperative.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7345",
+      "Error class": "0",
+      "Description": "Amplitude of analog signals too high, limit of AD conversion exceeded",
+      "Cause": "Encoder signals subject to EMC interference (shield connection, wiring, etc.).Encoder inoperative.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7346",
+      "Error class": "4",
+      "Description": "System error detected: Encoder not readyParameter_SigLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7347",
+      "Error class": "0",
+      "Description": "System error detected: Position initialization not possible",
+      "Cause": "Analog and digital encoder signals subject to massive interference.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7348",
+      "Error class": "3",
+      "Description": "Timeout reading encoder temperatureParameter_SigLatchedBit 16",
+      "Cause": "Encoder without temperature sensor, incorrect encoder connection.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7349",
+      "Error class": "0",
+      "Description": "Discrepancy between absolute and analog encoder phases",
+      "Cause": "Analog encoder signals are subject to interference.Encoder inoperative.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 734A",
+      "Error class": "3",
+      "Description": "Amplitude of analog signals from encoder too high, signals are clippedParameter_SigLatchedBit 16",
+      "Cause": "Incorrect encoder wiring.Encoder hardware interface inoperative.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 734B",
+      "Error class": "0",
+      "Description": "Signal position evaluation of analog encoder inoperativeParameter_WarnLatchedBit 16",
+      "Cause": "Incorrect encoder wiring.Encoder hardware interface inoperative.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 734C",
+      "Error class": "par.",
+      "Description": "Error detected with quasi absolute positionParameter_SigLatchedBit 16",
+      "Cause": "The motor shaft may have been moved while the drive was powered down. A quasi absolute position has been detected that is not within the permissible motor shaft deviation range.",
+      "Correctives": "If the quasi absolute function is active, only power down the drive if the motor is at a standstill and do not move the motor shaft when the drive is off."
+    },
+    {
+      "Error code": "E 734D",
+      "Error class": "0",
+      "Description": "Index pulse is not available for the encoderParameter_WarnLatchedBit 16",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 734E",
+      "Error class": "4",
+      "Description": "Error in analog signals from encoder detected (additional info=Internal_DeltaQuep)Parameter_SigLatchedBit 16",
+      "Cause": "Encoder cable not properly connected.Encoder signals subject to EMC interference (shield connection, wiring, etc.).Mechanical issue.",
+      "Correctives": "Verify EMC measures.Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7500",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Overrun error detectedParameter_WarnLatchedBit 5",
+      "Cause": "EMC; incorrect cabling.",
+      "Correctives": "Verify cables."
+    },
+    {
+      "Error code": "E 7501",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Framing error detectedParameter_WarnLatchedBit 5",
+      "Cause": "EMC; incorrect cabling.",
+      "Correctives": "Verify cables."
+    },
+    {
+      "Error code": "E 7502",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Parity error detectedParameter_WarnLatchedBit 5",
+      "Cause": "EMC; incorrect cabling.",
+      "Correctives": "Verify cables."
+    },
+    {
+      "Error code": "E 7503",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Receive error detectedParameter_WarnLatchedBit 5",
+      "Cause": "EMC; incorrect cabling.",
+      "Correctives": "Verify cables."
+    },
+    {
+      "Error code": "E 7601",
+      "Error class": "4",
+      "Description": "System error detected: Indeterminable type of encoderParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7602",
+      "Error class": "4",
+      "Description": "Configuration error detected: Encoder module and selected machine encoder type do not matchParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7603",
+      "Error class": "4",
+      "Description": "Configuration error detected: Encoder module and selected motor encoder type do not matchParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7604",
+      "Error class": "4",
+      "Description": "Configuration error detected: Encoder module parameterized, but no module detectedParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7605",
+      "Error class": "4",
+      "Description": "Configuration error detected: No motor encoder type selected for encoder moduleParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7606",
+      "Error class": "4",
+      "Description": "Configuration error detected: No machine encoder type selected for encoder moduleParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7607",
+      "Error class": "4",
+      "Description": "Encoder module cannot be identifiedParameter_SigLatchedBit 22",
+      "Cause": "The encoder module is indeterminable.",
+      "Correctives": "Use correct encoder module."
+    },
+    {
+      "Error code": "E 7608",
+      "Error class": "4",
+      "Description": "Encoder module power supply overcurrentParameter_SigLatchedBit 22",
+      "Cause": "- Short circuit at connector or encoder cable.- Incorrect or inoperative encoder.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7609",
+      "Error class": "4",
+      "Description": "Encoder not connected to encoder moduleParameter_SigLatchedBit 22",
+      "Cause": "Connector not connected to module or not connected to motor/encoder.Incorrect or inoperative encoder cable.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 760A",
+      "Error class": "3",
+      "Description": "Encoder module in slot 2 missing.Parameter_SigLatchedBit 22",
+      "Cause": "Module has been removed or module is inoperative.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 760C",
+      "Error class": "2",
+      "Description": "Maximum encoder frequency exceededParameter_SigLatchedBit 22",
+      "Cause": "Velocity too high for the encoder.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 760D",
+      "Error class": "4",
+      "Description": "Configuration error detected: Incorrect use of encoder moduleParameter_SigLatchedBit 22",
+      "Cause": "Incorrect value in parameter ENC2_usage.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 760E",
+      "Error class": "2",
+      "Description": "Position evaluation error detected (signal tracking error detected)Parameter_SigLatchedBit 22",
+      "Cause": "Encoder signals subject to EMC interference",
+      "Correctives": "Verify wiring and cable shield."
+    },
+    {
+      "Error code": "E 760F",
+      "Error class": "0",
+      "Description": "Incorrect position evaluation (interference detected)Parameter_WarnLatchedBit 22",
+      "Cause": "Encoder signals subject to EMC interference",
+      "Correctives": "Verify wiring, cable shield."
+    },
+    {
+      "Error code": "E 7610",
+      "Error class": "0",
+      "Description": "Resolver: Loss of position tracking, position is inaccurateParameter_WarnLatchedBit 22",
+      "Cause": "- Motor velocity is too high.- Motor acceleration is too fast.",
+      "Correctives": "- Reduce velocity.- Reduce acceleration.- Reduce resolver resolution.- Adapt resolver excitation frequency."
+    },
+    {
+      "Error code": "E 7611",
+      "Error class": "2",
+      "Description": "Resolver: Signal degradation, position is inaccurateParameter_SigLatchedBit 22",
+      "Cause": "Resolver is inoperative.Resolver signals are subject to interference.Resolver cable is too long.",
+      "Correctives": "Replace resolver.Verify resolver cable: wiring and shield connection.Additional info bits:D5: Sine/cosine inputs exceed DOS out of range threshold.D4: Sine/cosine inputs exceed DOS mismatch threshold."
+    },
+    {
+      "Error code": "E 7612",
+      "Error class": "3",
+      "Description": "Resolver: Loss of signal, position unreliableParameter_SigLatchedBit 22",
+      "Cause": "Resolver is inoperative.Resolver wiring is incorrect.Resolver signals are subject to excessive interference.Resolver is unsuitable for drive.Incorrect parameter transformation ratio.",
+      "Correctives": "Verify resolver cable: wiring and shield connection.Replace resolver.Additional info bits:D7: Sine/cosine inputs clipped.D6: Sine/cosine inputs below LOS threshold."
+    },
+    {
+      "Error code": "E 7613",
+      "Error class": "3",
+      "Description": "Resolver: Signal communication subject to interferenceParameter_SigLatchedBit 22",
+      "Cause": "Resolver signals are subject to interference.",
+      "Correctives": "Verify resolver cable: wiring and shield connection."
+    },
+    {
+      "Error code": "E 7614",
+      "Error class": "3",
+      "Description": "Error detected at resolver power supply.Parameter_SigLatchedBit 22",
+      "Cause": "Resolver is not properly connected.",
+      "Correctives": "Verify resolver cable."
+    },
+    {
+      "Error code": "E 7615",
+      "Error class": "3",
+      "Description": "System error detected: Encoder module RES is not ready for position evaluationParameter_SigLatchedBit 22",
+      "Cause": "EMC.",
+      "Correctives": "Verify resolver cable."
+    },
+    {
+      "Error code": "E 7616",
+      "Error class": "3",
+      "Description": "System error detected: Resolver timeoutParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "Replace encoder module."
+    },
+    {
+      "Error code": "E 7617",
+      "Error class": "1",
+      "Description": "Resolver velocity is too highParameter_SigLatchedBit 22",
+      "Cause": "Motor velocity is too high.",
+      "Correctives": "Reduce motor velocity."
+    },
+    {
+      "Error code": "E 7618",
+      "Error class": "4",
+      "Description": "Encoder 2 Hall sensor error detectedParameter_SigLatchedBit 22",
+      "Cause": "Incorrect wiring or inoperative cable for Hall signals of encoder 2.",
+      "Correctives": "Verify encoder cable."
+    },
+    {
+      "Error code": "E 7619",
+      "Error class": "4",
+      "Description": "Incorrect communication between module and encoderParameter_SigLatchedBit 22",
+      "Cause": "Incorrect encoder wiring/adjustment or incorrect encoder parameter settings (example: parameter ENCDigSSICoding is set for SSI encoder).",
+      "Correctives": "Verify encoder cable: wiring and shield connection.. Verify encoder parameter settings. Verify encoder adjustment."
+    },
+    {
+      "Error code": "E 761A",
+      "Error class": "0",
+      "Description": "Incorrect communication between module and encoderParameter_WarnLatchedBit 22",
+      "Cause": "Incorrect encoder wiring.",
+      "Correctives": "Verify encoder cable: wiring and shield connection."
+    },
+    {
+      "Error code": "E 761B",
+      "Error class": "4",
+      "Description": "Connected type of EnDat encoder is not supportedParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "Use a supported EnDat encoder."
+    },
+    {
+      "Error code": "E 761C",
+      "Error class": "4",
+      "Description": "Configuration error detected: Invalid SSI encoder parameter settingParameter_SigLatchedBit 22",
+      "Cause": "Incorrect values in parameter ENCDigSSIResSgl or ENCDigSSIResMult.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 761D",
+      "Error class": "2",
+      "Description": "Maximum velocity of the encoder is exceededParameter_SigLatchedBit 22",
+      "Cause": "Velocity too high for the encoder. In the case of SSI or EnDat2.2, the reason may also be a detected encoder communication error.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 761E",
+      "Error class": "2",
+      "Description": "Encoder module overtemperatureParameter_SigLatchedBit 22",
+      "Cause": "The ambient temperature is too high.",
+      "Correctives": "Improve the heat dissipation in the control cabinet."
+    },
+    {
+      "Error code": "E 761F",
+      "Error class": "2",
+      "Description": "Position evaluation error detected (AB encoder signals)Parameter_SigLatchedBit 22",
+      "Cause": "No sync signal available.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7620",
+      "Error class": "4",
+      "Description": "Checksum error detected in EnDat encoder dataParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7621",
+      "Error class": "1",
+      "Description": "Runtime compensation was not successfulParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "Verify encoder cable: wiring and shield connection."
+    },
+    {
+      "Error code": "E 7622",
+      "Error class": "0",
+      "Description": "Resolver timeoutParameter_WarnLatchedBit 22",
+      "Cause": "System error detected.",
+      "Correctives": "Replace encoder module"
+    },
+    {
+      "Error code": "E 7623",
+      "Error class": "0",
+      "Description": "Absolute encoder signal is not availableParameter_WarnLatchedBit 22",
+      "Cause": "There is no encoder available at the input specified via the parameter ENC_abs_source.",
+      "Correctives": "Verify wiring, verify encoder. Change the value of the parameter ENC_abs_source."
+    },
+    {
+      "Error code": "E 7624",
+      "Error class": "0",
+      "Description": "Absolute position for encoder 2 cannot be setParameter_WarnLatchedBit 22",
+      "Cause": "No encoder connected or encoder does not support setting of absolute positions.",
+      "Correctives": "Use an encoder that supports direct setting of the absolute position via ENC2_setpabs."
+    },
+    {
+      "Error code": "E 7625",
+      "Error class": "0",
+      "Description": "Not possible to set the absolute position for encoder 1.Parameter_WarnLatchedBit 22",
+      "Cause": "There is no encoder connected to the input for encoder 1.",
+      "Correctives": "Connect an encoder to the input for encoder 1 before trying to set the absolute position directly via ENC1_abs_pos."
+    },
+    {
+      "Error code": "E 7626",
+      "Error class": "4",
+      "Description": "Overflow error detected during encoder scalingParameter_SigLatchedBit 22",
+      "Cause": "The multiturn resolution of the machine encoder with reference to the motor shaft exceeds the system limits, for example, due to the mechanical gear ratio between machine encoder and motor encoder.",
+      "Correctives": "Reduce the number of bits of the multitun resolution that are used for position evaluation via the parameter ENCDigResMulUsed."
+    },
+    {
+      "Error code": "E 7627",
+      "Error class": "4",
+      "Description": "Configuration error detected: Invalid BISS encoder parameter settingParameter_SigLatchedBit 22",
+      "Cause": "Incorrect values in parameters ENCDigBISSResSgl or ENCDigBISSResMult.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7628",
+      "Error class": "0",
+      "Description": "BISS encoder bits 'War'\u00a0or 'Err' are setParameter_WarnLatchedBit 22",
+      "Cause": "The bits are used for diverse types of monitoring such as:- Encoder temperature is too high.- Service life of LED inside encoder exceeded.- Position is not reliable.",
+      "Correctives": "Replace encoder."
+    },
+    {
+      "Error code": "E 7629",
+      "Error class": "3",
+      "Description": "BISS initialization error detectedParameter_SigLatchedBit 22",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7701",
+      "Error class": "4",
+      "Description": "System error detected: Timeout during connection to power stageParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7702",
+      "Error class": "4",
+      "Description": "System error detected: Invalid data received from power stageParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7703",
+      "Error class": "4",
+      "Description": "System error detected: Data exchange with power stage lostParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7704",
+      "Error class": "4",
+      "Description": "System error detected: Exchange of identification data from power stage not successfulParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7705",
+      "Error class": "4",
+      "Description": "System error detected: Checksum identification data from power stage incorrectParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7706",
+      "Error class": "4",
+      "Description": "System error detected: No identification frame received from power stageParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7707",
+      "Error class": "4",
+      "Description": "System error detected: Type of power stage and manufacture data do not match",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7708",
+      "Error class": "4",
+      "Description": "PIC voltage supply too lowParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7709",
+      "Error class": "4",
+      "Description": "System error detected: Invalid numbers of data receivedParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 770A",
+      "Error class": "2",
+      "Description": "PIC received data with incorrect parityParameter_SigLatchedBit 31",
+      "Cause": "-",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7800",
+      "Error class": "1",
+      "Description": "eSM module: System error detected: Error of class 1 forcedParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7801",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Error of class 2 forcedParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7802",
+      "Error class": "3",
+      "Description": "eSM module: System error detected: Error of class 3 forcedParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7803",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Error of class 4 forcedParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7804",
+      "Error class": "3",
+      "Description": "eSM module: Insufficient deceleration for Quick StopParameter_SigLatchedBit 23",
+      "Cause": "Quick Stop ramp of drive lower than Quick Stop ramp configured for eSM.",
+      "Correctives": "Change ramp in eSM or drive."
+    },
+    {
+      "Error code": "E 7805",
+      "Error class": "1",
+      "Description": "eSM module: Error detected during Safe Operating Stop (SOS)Parameter_SigLatchedBit 23",
+      "Cause": "Motor movement during Safe Operating Stop (SOS).",
+      "Correctives": "Keep motor from moving while Safe Operating Stop is active (external forces, loads)."
+    },
+    {
+      "Error code": "E 7806",
+      "Error class": "1",
+      "Description": "eSM module: Safely Limited Speed (SLS) exceeded in machine operating mode Setup ModeParameter_SigLatchedBit 23",
+      "Cause": "Delay for reaching Safely Limited Speed (SLS) too low or eSM deceleration ramp too high.",
+      "Correctives": "Increase delay for eSM control of Safely Limited Speed (SLS) or decrease eSM deceleration ramp for reaching Safely Limited Speed (SLS)."
+    },
+    {
+      "Error code": "E 780A",
+      "Error class": "2",
+      "Description": "eSM module: /ESTOP signal for EMERGENCY STOP triggeredParameter_SigLatchedBit 23",
+      "Cause": "EMERGENCY STOP is active.",
+      "Correctives": "Reset EMERGENCY STOP."
+    },
+    {
+      "Error code": "E 780B",
+      "Error class": "0",
+      "Description": "eSM module: Not ready for Fault ResetParameter_WarnLatchedBit 23",
+      "Cause": "eSM is in state Quick Stop Active or Fault Reaction Active or Fault.",
+      "Correctives": "Wait until eSM is no longer in state Quick Stop Active or Fault Reaction Active or Fault or reboot the drive."
+    },
+    {
+      "Error code": "E 780C",
+      "Error class": "0",
+      "Description": "eSM module: Not ready for eSM DisableParameter_WarnLatchedBit 23",
+      "Cause": "Safety module eSM is not in operating state Operation Enabled.",
+      "Correctives": "eSM Disable requires the safety module eSM to be in operating state Operation Enabled."
+    },
+    {
+      "Error code": "E 780F",
+      "Error class": "0",
+      "Description": "eSM module: Parameter cannot be written in this operating stateParameter_WarnLatchedBit 23",
+      "Cause": "Parameter cannot be written in this eSM state.",
+      "Correctives": "Change eSM state to write this parameter."
+    },
+    {
+      "Error code": "E 7810",
+      "Error class": "0",
+      "Description": "eSM module: Incorrect passwordParameter_WarnLatchedBit 23",
+      "Cause": "The password that was sent by the configuration tool is not identical to the password stored in the device.",
+      "Correctives": "Send the stored password."
+    },
+    {
+      "Error code": "E 7811",
+      "Error class": "0",
+      "Description": "eSM module: Timeout during parameter download (default values loaded)Parameter_WarnLatchedBit 23",
+      "Cause": "Incorrect connection or EMC.",
+      "Correctives": "Verify wiring (shield)."
+    },
+    {
+      "Error code": "E 7813",
+      "Error class": "0",
+      "Description": "eSM module: Parameter checksum cannot be written in this operating stateParameter_WarnLatchedBit 23",
+      "Cause": "eSM is not ready to be configured.",
+      "Correctives": "Use correct password. Reconfigure safety module eSM. Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7814",
+      "Error class": "0",
+      "Description": "eSM module: Parameter checksum incorrect (default values loaded)Parameter_WarnLatchedBit 23",
+      "Cause": "EMC.The commissioning software is outdated and not compatible with the safety module eSM.",
+      "Correctives": "Verify wiring (shield).Install latest commissioning software version."
+    },
+    {
+      "Error code": "E 7815",
+      "Error class": "0",
+      "Description": "eSM module: UndertemperatureParameter_WarnLatchedBit 23",
+      "Cause": "Temperature too low.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7816",
+      "Error class": "0",
+      "Description": "eSM module: OvertemperatureParameter_WarnLatchedBit 23",
+      "Cause": "Temperature too high.",
+      "Correctives": "Verify the ambient conditions. Verify that the flow of air is sufficient (pollution, objects)."
+    },
+    {
+      "Error code": "E 7818",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: ESM5VDC undervoltageParameter_SigLatchedBit 23",
+      "Cause": "Error detected in eSM 5V supply.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7819",
+      "Error class": "2",
+      "Description": "eSM module: Overload outputs channel AParameter_SigLatchedBit 23",
+      "Cause": "Short circuit or overload.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 781A",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: 5V overvoltageParameter_SigLatchedBit 23",
+      "Cause": "eSM internal power supply error detected",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 781B",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: 5V undervoltageParameter_SigLatchedBit 23",
+      "Cause": "eSM internal power supply error detected",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 781D",
+      "Error class": "2",
+      "Description": "eSM module: ESMSTART: Maximum permissible pulse duration exceededParameter_SigLatchedBit 23",
+      "Cause": "Pulse duration longer than 4 seconds.",
+      "Correctives": "Pulse duration must be less than 4 seconds."
+    },
+    {
+      "Error code": "E 781E",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: RAMParameter_SigLatchedBit 23",
+      "Cause": "eSM RAM error detected",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 781F",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Stack overflowParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7820",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Program sequence control (communication)Parameter_SigLatchedBit 23",
+      "Cause": "Software watchdog eSM (CPU_B)",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7821",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Program sequence control (Idle task)Parameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7825",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Firmware checksumParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7826",
+      "Error class": "0",
+      "Description": "eSM module: Parameter outside of permissible value rangeParameter_WarnLatchedBit 23",
+      "Cause": "Parameter outside of permissible value range.",
+      "Correctives": "Verify parameter value."
+    },
+    {
+      "Error code": "E 7827",
+      "Error class": "2",
+      "Description": "eSM module: Parameter checksum error detectedParameter_SigLatchedBit 23",
+      "Cause": "Saved parameter values are invalid.",
+      "Correctives": "Reconfigure the eSM. Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7828",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: SPI framing error detectedParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7829",
+      "Error class": "4",
+      "Description": "eSM module: Input states channel A and channel B are not identicalParameter_SigLatchedBit 23",
+      "Cause": "Wire break or connected devices are inoperable.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 782A",
+      "Error class": "2",
+      "Description": "eSM module: Output states channel A and channel B are not identicalParameter_SigLatchedBit 23",
+      "Cause": "Short circuit to 24V DC. System error detected.",
+      "Correctives": "Verify wiring and connected devices. Verify connection of STO_A and STO_B. Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 782B",
+      "Error class": "3",
+      "Description": "eSM module: System error detected: Position evaluation error detected (values not identical)Parameter_SigLatchedBit 23",
+      "Cause": "CPU_A and CPU_B have different position values. This condition may have been caused by the encoder.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 782C",
+      "Error class": "3",
+      "Description": "eSM module: System error detected: Velocity evaluation error detected (values not identical)Parameter_SigLatchedBit 23",
+      "Cause": "CPU_A and CPU_B have different velocity values. This condition may have been caused by the encoder.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 782F",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Error detected during dynamization of STO signalParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7833",
+      "Error class": "0",
+      "Description": "eSM module: System error detected: Nonvolatile memory incorrect checksum (default values loaded)Parameter_WarnLatchedBit 23",
+      "Cause": "Nonvolatile memory inoperative.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7834",
+      "Error class": "0",
+      "Description": "eSM module: Safety module replaced (default values loaded)Parameter_WarnLatchedBit 23",
+      "Cause": "This safety module has not been configured with this drive. The parameters have been reset to the default values.",
+      "Correctives": "Reconfigure the safety module."
+    },
+    {
+      "Error code": "E 7835",
+      "Error class": "4",
+      "Description": "eSM module: Commutation positionParameter_SigLatchedBit 23",
+      "Cause": "Encoder error or error in internal communication with the drive detected (for example, EMC).",
+      "Correctives": "Verify EMC. Verify encoder connection. Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7836",
+      "Error class": "4",
+      "Description": "eSM module: Parameter checksums not identicalParameter_SigLatchedBit 23",
+      "Cause": "Parameter of CPU_A is not identical to parameter of CPU_B. Not possible to load parameters into safety module eSM.",
+      "Correctives": "Retry loading the parameters into the safety module eSM. If the condition persists, contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E 7837",
+      "Error class": "0",
+      "Description": "eSM module: System error detected: Boot program: Invalid addressParameter_WarnLatchedBit 23",
+      "Cause": "Invalid write access of bootloader to flash memory range.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7838",
+      "Error class": "1",
+      "Description": "eSM module: Safely Limited Speed (SLS) exceeded in machine operating mode Automatic ModeParameter_SigLatchedBit 23",
+      "Cause": "Drive velocity greater than configured eSM speed limit.",
+      "Correctives": "Reduce velocity of the drive or verify eSM speed limit for machine operating mode Automatic Mode."
+    },
+    {
+      "Error code": "E 7839",
+      "Error class": "2",
+      "Description": "eSM module: Input ESMSTART low instead of high (automatic start)Parameter_SigLatchedBit 23",
+      "Cause": "ESMSTART is configured for automatic start and must be high at start.",
+      "Correctives": "Verify parameter configuration of ESMSTART. Verify wiring of ESMSTART."
+    },
+    {
+      "Error code": "E 783A",
+      "Error class": "2",
+      "Description": "eSM module: Input ESMSTART high instead of low (manual start)Parameter_SigLatchedBit 23",
+      "Cause": "ESMSTART is configured for manual start and must be low at start.",
+      "Correctives": "Verify parameter configuration of ESMSTART. Verify wiring of ESMSTART."
+    },
+    {
+      "Error code": "E 783B",
+      "Error class": "2",
+      "Description": "eSM module: Guard door acknowledgment: The acknowledgement signal is available for too long a time.Parameter_SigLatchedBit 23",
+      "Cause": "The acknowledgement signal is available for more than 6 seconds.",
+      "Correctives": "The acknowledgement signal must be available for less than 6 seconds."
+    },
+    {
+      "Error code": "E 783C",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: States of eSM state machines not identicalParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 783F",
+      "Error class": "2",
+      "Description": "eSM module: Output AUXOUT1 (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7840",
+      "Error class": "2",
+      "Description": "eSM module: Output /INTERLOCK_OUT (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7841",
+      "Error class": "2",
+      "Description": "eSM module: Output RELAY_OUT_A (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7842",
+      "Error class": "2",
+      "Description": "eSM module: Output CCM24V_OUT_A (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7843",
+      "Error class": "2",
+      "Description": "eSM module: Output AUXOUT1 (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7844",
+      "Error class": "2",
+      "Description": "eSM module: Output /INTERLOCK_OUT (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7845",
+      "Error class": "2",
+      "Description": "eSM module: Output RELAY_OUT_A (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7846",
+      "Error class": "2",
+      "Description": "eSM module: Output CCM24V_OUT_A (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7848",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input ESMSTART_AParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7849",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input SETUPENABLE_AParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 784A",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input SETUPMODE_AParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 784B",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input GUARD_AParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 784C",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input GUARD_ACKParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 784D",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input /INTERLOCK_IN_AParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 784E",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input /ESTOP_AParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 784F",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input NOTUSED_AParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7850",
+      "Error class": "2",
+      "Description": "eSM module: Overload outputs channel BParameter_SigLatchedBit 23",
+      "Cause": "Short circuit or overload.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7851",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: UART overrun/framing errorParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7852",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: ResEnc (encoder resolution) is set to 0Parameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7853",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: CPU synchronizationParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7854",
+      "Error class": "2",
+      "Description": "eSM module: No motor movement for 36 hoursParameter_SigLatchedBit 23",
+      "Cause": "There has not been a minimum motor movement for the last 36 hours.",
+      "Correctives": "There must be a minimum motor movement at least once every 36 hours."
+    },
+    {
+      "Error code": "E 7855",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Timeout high-priority tests (5 sec)Parameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7856",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Timeout low-priority testsParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7857",
+      "Error class": "2",
+      "Description": "eSM module: Parameter dec_Qstop (minimum deceleration) is set to 0Parameter_SigLatchedBit 23",
+      "Cause": "Module is not configured.",
+      "Correctives": "Download a configuration."
+    },
+    {
+      "Error code": "E 7858",
+      "Error class": "2",
+      "Description": "eSM module: Output AUXOUT2 (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7859",
+      "Error class": "2",
+      "Description": "eSM module: Output /INTERLOCK_OUT (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 785A",
+      "Error class": "2",
+      "Description": "eSM module: Output RELAY_OUT_B (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 785B",
+      "Error class": "2",
+      "Description": "eSM module: Output CCM24V_OUT_B (cross fault to another output detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to another output.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 785C",
+      "Error class": "2",
+      "Description": "eSM module: Output AUXOUT2 (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 785D",
+      "Error class": "2",
+      "Description": "eSM module: Output /INTERLOCK_OUT (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 785E",
+      "Error class": "2",
+      "Description": "eSM module: Output RELAY_OUT_B (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 785F",
+      "Error class": "2",
+      "Description": "eSM module: Output CCM24V_OUT_B (cross fault to 24 V detected)Parameter_SigLatchedBit 23",
+      "Cause": "Cross fault detection detected a cross fault to 24 V.",
+      "Correctives": "Verify wiring and connected devices."
+    },
+    {
+      "Error code": "E 7861",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input ESMSTART_BParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7862",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input SETUPENABLE_BParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7863",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input SETUPMODE_BParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7864",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input GUARD_BParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7865",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input GUARD_ACKParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7866",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input /INTERLOCK_IN_BParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7867",
+      "Error class": "2",
+      "Description": "eSM module: System error detected: Input /ESTOP_BParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 786A",
+      "Error class": "4",
+      "Description": "eSM module: UndertemperatureParameter_SigLatchedBit 23",
+      "Cause": "Temperature of the eSM too low.",
+      "Correctives": "Verify ambient conditions."
+    },
+    {
+      "Error code": "E 786C",
+      "Error class": "2",
+      "Description": "eSM module: Overvoltage ESM24VDCParameter_SigLatchedBit 23",
+      "Cause": "Voltage too high at the ESM24VDC.",
+      "Correctives": "Verify power supply."
+    },
+    {
+      "Error code": "E 786D",
+      "Error class": "4",
+      "Description": "eSM module: OvertemperatureParameter_SigLatchedBit 23",
+      "Cause": "Temperature too high.",
+      "Correctives": "Verify the ambient conditions. Verify that the flow of air is sufficient (pollution, objects)."
+    },
+    {
+      "Error code": "E 786E",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Operating states not identicalParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7870",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Software versions not identicalParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7871",
+      "Error class": "3",
+      "Description": "eSM module: Error detected during Safe Operating Stop (SOS) after detected errorParameter_SigLatchedBit 23",
+      "Cause": "Motor movement during Safe Operating Stop (SOS).",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7872",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Software incompatible with hardwareParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7873",
+      "Error class": "1",
+      "Description": "eSM module: Error detected during deceleration to Safely Limited Speed (SLS)Parameter_SigLatchedBit 23",
+      "Cause": "Velocity of drive greater than speed limit configured for eSM Safely Limited Speed (SLS).",
+      "Correctives": "Verify speed limit and delay time for eSM Safely Limited Speed (SLS). Adapt the drive values for ramp and velocity, if necessary."
+    },
+    {
+      "Error code": "E 7874",
+      "Error class": "2",
+      "Description": "eSM module: Repeated error detected during Safe Operating Stop (SOS)Parameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7875",
+      "Error class": "4",
+      "Description": "eSM module: Repeated error detected during deceleration for Quick StopParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7876",
+      "Error class": "3",
+      "Description": "eSM module: /INTERLOCK_IN not high (timeout if t_Relay = 2)Parameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7877",
+      "Error class": "2",
+      "Description": "eSM module: Input /INTERLOCK_IN is high even though Ignore has been configuredParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7878",
+      "Error class": "2",
+      "Description": "eSM module: Speed limit for machine operating mode Setup Mode (eSM_v_maxSetup) higher than speed limit for machine operating mode Automatic Mode (eSM_v_maxAuto)Parameter_SigLatchedBit 23",
+      "Cause": "Speed limit for machine operating mode Setup Mode must not be greater than speed limit for machine operating mode Automatic Mode.",
+      "Correctives": "Verify the speed limits for machine operating modes Automatic Mode and Setup Mode and change them as required."
+    },
+    {
+      "Error code": "E 7879",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Indeterminable state of eSM state machineParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 787A",
+      "Error class": "2",
+      "Description": "eSM module: ESM24VDC undervoltageParameter_SigLatchedBit 23",
+      "Cause": "Voltage at the ESM24VDC connector to low.",
+      "Correctives": "Verify power supply."
+    },
+    {
+      "Error code": "E 787D",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Asynchronous communication (UART/SPI)Parameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 787E",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: RAM (bit)Parameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 787F",
+      "Error class": "4",
+      "Description": "eSM module: Encoder signal error detectedParameter_SigLatchedBit 23",
+      "Cause": "Encoder or encoder cable inoperative. Incorrect signal evaluation in drive.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7880",
+      "Error class": "2",
+      "Description": "eSM module: Indeterminable serviceParameter_SigLatchedBit 23",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7881",
+      "Error class": "2",
+      "Description": "eSM module: Parameter does not existParameter_SigLatchedBit 23",
+      "Cause": "Parameter does not exist.",
+      "Correctives": "Verify the parameter number."
+    },
+    {
+      "Error code": "E 7882",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: 3_3V overvoltageParameter_SigLatchedBit 23",
+      "Cause": "Overvoltage in internal eSM power supply.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7883",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: 3_3V undervoltageParameter_SigLatchedBit 23",
+      "Cause": "Undervoltage in internal eSM power supply.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7884",
+      "Error class": "4",
+      "Description": "eSM module: System error detected: Temperature sensorParameter_SigLatchedBit 23",
+      "Cause": "Temperature sensor for CPU_A or CPU_B does not work properly.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7886",
+      "Error class": "2",
+      "Description": "eSM module: No speed limit for negative direction set for direction-dependent SLSParameter_SigLatchedBit 23",
+      "Cause": "Direction-dependent SLS is active, but no speed limit greater than 0\u00a0RPM has been specified in the parameter eSM_v_maxSetup or in parameter eSM_SLSnegDirS.",
+      "Correctives": "Set a speed limit for direction-dependent SLS greater than 0\u00a0RPM in the parameter _eSM_v_maxSetup or in the parameter eSM_SLSnegDirS or deactivate direction-dependent SLS via the parameter eSM_FuncSwitches."
+    },
+    {
+      "Error code": "E 7887",
+      "Error class": "2",
+      "Description": "eSM module: Speed limit for SLS in negative direction has been specified, but direction-dependant SLS has not been activatedParameter_SigLatchedBit 23",
+      "Cause": "Direction-dependent SLS is not active, but a speed limit for direction-dependent SLS in negative direction has been specified.",
+      "Correctives": "Set the speed limit for direction-dependent SLS in negative direction in parameter eSM_SLSnegDirS to 0\u00a0RPM or activate direction-dependent SLS via the parameter eSM_FuncSwitches."
+    },
+    {
+      "Error code": "E 7889",
+      "Error class": "2",
+      "Description": "eSM module: Order of speed limits for multiple SLS in positive direction is incorrectParameter_SigLatchedBit 23",
+      "Cause": "The values for the speed limits for multiple SLS are not in ascending order.",
+      "Correctives": "Set correct speed limits for multiple SLS."
+    },
+    {
+      "Error code": "E 788A",
+      "Error class": "2",
+      "Description": "eSM module: Order of speed limits for multiple SLS in negative direction is incorrectParameter_SigLatchedBit 23",
+      "Cause": "The values for the speed limits for multiple SLS are not in ascending order.",
+      "Correctives": "Set correct speed limits for multiple SLS."
+    },
+    {
+      "Error code": "E 788B",
+      "Error class": "2",
+      "Description": "eSM module: Invalid speed limit for multiple SLS in positive directionParameter_SigLatchedBit 23",
+      "Cause": "Speed limit for multiple SLS in positive direction has a value of zero.",
+      "Correctives": "Set a speed limit not equal to zero for multiple SLS."
+    },
+    {
+      "Error code": "E 788C",
+      "Error class": "2",
+      "Description": "eSM module: Invalid speed limit for multiple SLS in negative direction has a value of zeroParameter_SigLatchedBit 23",
+      "Cause": "Speed limit for multiple SLS in negative direction has a value of zero.",
+      "Correctives": "Set a speed limit not equal to zero for multiple SLS."
+    },
+    {
+      "Error code": "E 788D",
+      "Error class": "2",
+      "Description": "eSM module: Two types of multiple SLS selected at the same timeParameter_SigLatchedBit 23",
+      "Cause": "eSM module: Two types of multiple SLS selected at the same time.",
+      "Correctives": "Select a single type of multiple SLS."
+    },
+    {
+      "Error code": "E 7900",
+      "Error class": "4",
+      "Description": "Module in fieldbus slot not correctly detectedParameter_SigLatchedBit 21",
+      "Cause": "Fieldbus module not correctly mounted in the slot.Unsupported fieldbus module inserted.Fieldbus module inoperative.EMC.",
+      "Correctives": "Replace fieldbus module.Improve EMC."
+    },
+    {
+      "Error code": "E 7901",
+      "Error class": "4",
+      "Description": "Indeterminable type of fieldbus module detected in fieldbus slotParameter_SigLatchedBit 21",
+      "Cause": "The type of module detected in fieldbus slot is not supported by the drive.",
+      "Correctives": "Use supported type of fieldbus module. Refer to manual or catalog."
+    },
+    {
+      "Error code": "E 7903",
+      "Error class": "3",
+      "Description": "Fieldbus module in slot 3 missingParameter_SigLatchedBit 21",
+      "Cause": "Fieldbus module has been removed or fieldbus module is inoperative.",
+      "Correctives": "Confirm or cancel HMI dialog box for fieldbus module replacement.Install a new fieldbus module."
+    },
+    {
+      "Error code": "E 7904",
+      "Error class": "0",
+      "Description": "Parameter access error detected in fieldbus module",
+      "Cause": "Fieldbus module parameter does not exist or cannot be written.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E 7905",
+      "Error class": "3",
+      "Description": "Fieldbus module in slot 3 has been changedParameter_SigLatchedBit 21",
+      "Cause": "The fieldbus module has been replaced by another type of fieldbus module.",
+      "Correctives": "Confirm the new fieldbus module via the HMI dialog."
+    },
+    {
+      "Error code": "E 7906",
+      "Error class": "0",
+      "Description": "Internal timeout in communication with fieldbus module",
+      "Cause": "Internal communication with fieldbus module not correct.Fieldbus module inoperative.EMC.",
+      "Correctives": "Replace fieldbus module.Improve EMC."
+    },
+    {
+      "Error code": "E A060",
+      "Error class": "2",
+      "Description": "Calculated velocity too high for operating mode Electronic GearParameter_SigLatchedBit 4",
+      "Cause": "Gear ratio or reference velocity value too high",
+      "Correctives": "Reduce the gear ratio or reference velocity."
+    },
+    {
+      "Error code": "E A061",
+      "Error class": "2",
+      "Description": "Position change in reference value for operating mode Electronic Gear too highParameter_SigLatchedBit 4",
+      "Cause": "Position reference change is too high.Error detected at signal input for reference value.",
+      "Correctives": "Reduce the resolution of the master.Verify signal input for reference value signal."
+    },
+    {
+      "Error code": "E A065",
+      "Error class": "0",
+      "Description": "Parameters cannot be writtenParameter_WarnLatchedBit 4",
+      "Cause": "A data set is still active.",
+      "Correctives": "Wait until the currently active data set has been terminated."
+    },
+    {
+      "Error code": "E A067",
+      "Error class": "1",
+      "Description": "Invalid value in data set (additional info = data set number (low byte) and entry (high byte))Parameter_SigLatchedBit 4",
+      "Cause": "Value not possible in data set.",
+      "Correctives": "See also parameters _MSM_error_num and _MSM_error_entry for additional information."
+    },
+    {
+      "Error code": "E A068",
+      "Error class": "0",
+      "Description": "Offset positioning not possibleParameter_WarnLatchedBit 4",
+      "Cause": "Operating mode Electronic Gear inactive or no gear method selected.",
+      "Correctives": "Start operating mode Electronic Gear and/or select a gear method."
+    },
+    {
+      "Error code": "E A069",
+      "Error class": "0",
+      "Description": "Setting the offset position is not possibleParameter_WarnLatchedBit 4",
+      "Cause": "If offset positioning is active, it is not possible to set the position offset.",
+      "Correctives": "Wait until ongoing offset positioning has finished."
+    },
+    {
+      "Error code": "E A06B",
+      "Error class": "2",
+      "Description": "Position deviation in operating mode Electronic Gear too highParameter_SigLatchedBit 4",
+      "Cause": "The position deviation has become excessively high due to a velocity limitation or the release of direction.",
+      "Correctives": "Verify the velocity of the external reference values and the velocity limitation. Verify release of direction."
+    },
+    {
+      "Error code": "E A300",
+      "Error class": "0",
+      "Description": "Deceleration after HALT request still running",
+      "Cause": "HALT was removed too soon.New command was sent before motor standstill was reached after a HALT request.",
+      "Correctives": "Wait for complete stop before removing HALT signal.Wait until motor has come to a complete standstill."
+    },
+    {
+      "Error code": "E A301",
+      "Error class": "0",
+      "Description": "Drive in operating state Quick Stop Active",
+      "Cause": "Error with error class 1 detected.Drive stopped with Quick Stop.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A302",
+      "Error class": "1",
+      "Description": "Stop by positive limit switchParameter_SigLatchedBit 1",
+      "Cause": "The positive limit switch was activated because movement range was exceeded, incorrect operation of limit switch or signal disturbance.",
+      "Correctives": "Verify application.Verify limit switch function and connection."
+    },
+    {
+      "Error code": "E A303",
+      "Error class": "1",
+      "Description": "Stop by negative limit switchParameter_SigLatchedBit 1",
+      "Cause": "The negative limit switch was activated because movement range was exceeded, incorrect operation of limit switch or signal disturbance.",
+      "Correctives": "Verify application.Verify limit switch function and connection."
+    },
+    {
+      "Error code": "E A304",
+      "Error class": "1",
+      "Description": "Stop by reference switchParameter_SigLatchedBit 1",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A305",
+      "Error class": "0",
+      "Description": "Power stage cannot be enabled in the operating state Not Ready To Switch On",
+      "Cause": "Fieldbus: An attempt was made to enable the power stage in the operating state Not Ready To Switch On.",
+      "Correctives": "Refer to the state diagram."
+    },
+    {
+      "Error code": "E A306",
+      "Error class": "1",
+      "Description": "Stop by user-initiated software stopParameter_SigLatchedBit 3",
+      "Cause": "Drive is in operating state Quick Stop Active due to a software stop request. The activation of a new operating mode is not possible, the error code is sent as the response to the activation command.",
+      "Correctives": "Clear break condition with command Fault Reset."
+    },
+    {
+      "Error code": "E A307",
+      "Error class": "0",
+      "Description": "Interruption by internal software stop",
+      "Cause": "In the operating modes Homing and Jog, the movement is internally interrupted by an internal software stop. The activation of a new operating mode is not possible, the error code is sent as the response to the activation command.",
+      "Correctives": "Perform a Fault Reset."
+    },
+    {
+      "Error code": "E A308",
+      "Error class": "0",
+      "Description": "Drive is in operating state Fault or Fault Reaction Active",
+      "Cause": "Error with error class 2 or higher detected.",
+      "Correctives": "Verify the error code, remove the cause and perform a Fault Reset."
+    },
+    {
+      "Error code": "E A309",
+      "Error class": "0",
+      "Description": "Drive not in operating state Operation Enabled",
+      "Cause": "A command was sent that requires the drive to be in the operating state Operation Enabled (for example, a command to change the operating mode).",
+      "Correctives": "Set drive to operating state Operation Enabled and repeat the command."
+    },
+    {
+      "Error code": "E A310",
+      "Error class": "0",
+      "Description": "Power stage not enabled",
+      "Cause": "Command cannot be used because the power stage is not enabled (operating state Operation Enabled or Quick Stop Active).",
+      "Correctives": "Set drive to an operating state in which the power stage is enabled, see state diagram."
+    },
+    {
+      "Error code": "E A311",
+      "Error class": "0",
+      "Description": "Operating mode change active",
+      "Cause": "A start request for an operating mode has been received while a change of the operating mode was active.",
+      "Correctives": "Wait until the operating mode change has terminated before triggering a start request for another operating mode."
+    },
+    {
+      "Error code": "E A312",
+      "Error class": "0",
+      "Description": "Profile generation interrupted",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A313",
+      "Error class": "0",
+      "Description": "Position overflow, zero point is therefore no longer valid (ref_ok=0)",
+      "Cause": "The movement range limits were exceeded and the zero point is no longer valid. An absolute movement requires a valid zero point.",
+      "Correctives": "Define a valid zero point by means of the operating mode Homing."
+    },
+    {
+      "Error code": "E A314",
+      "Error class": "0",
+      "Description": "No valid zero point",
+      "Cause": "Command needs a valid zero point (ref_ok=1).",
+      "Correctives": "Define a valid zero point by means of the operating mode Homing."
+    },
+    {
+      "Error code": "E A315",
+      "Error class": "0",
+      "Description": "Homing active",
+      "Cause": "Command cannot be used while the operating mode Homing is active.",
+      "Correctives": "Wait until reference movement is finished."
+    },
+    {
+      "Error code": "E A316",
+      "Error class": "0",
+      "Description": "Overflow during calculation of acceleration",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A317",
+      "Error class": "0",
+      "Description": "Motor is not at a standstill",
+      "Cause": "Command sent which is not permissible when the motor is not at a standstill.For example:- Change of software limit switches- Change of handling of monitoring signals- Setting of reference point- Teach in of data set",
+      "Correctives": "Wait until the motor has come to a standstill (x_end = 1)."
+    },
+    {
+      "Error code": "E A318",
+      "Error class": "0",
+      "Description": "Operating mode active (x_end=0)",
+      "Cause": "Activation of a new operating mode is not possible while another operating mode is still active.",
+      "Correctives": "Wait until the command in the operating mode has finished (x_end=1)or terminate active operating mode with HALT command."
+    },
+    {
+      "Error code": "E A319",
+      "Error class": "1",
+      "Description": "Manual tuning/Autotuning: Movement out of rangeParameter_SigLatchedBit 2",
+      "Cause": "The movement exceeds the parameterized maximum movement range.",
+      "Correctives": "Verify permissible movement range value and time interval."
+    },
+    {
+      "Error code": "E A31A",
+      "Error class": "0",
+      "Description": "Manual tuning/Autotuning: Amplitude/offset too high",
+      "Cause": "Amplitude plus offset for tuning exceed internal velocity or current limitation.",
+      "Correctives": "Choose lower amplitude and offset values."
+    },
+    {
+      "Error code": "E A31B",
+      "Error class": "0",
+      "Description": "Halt requested",
+      "Cause": "Command not permissible while Halt is requested.",
+      "Correctives": "Clear Halt request and repeat command."
+    },
+    {
+      "Error code": "E A31C",
+      "Error class": "0",
+      "Description": "Invalid position setting with software limit switch",
+      "Cause": "Value for negative (positive) software limit switch is greater (less) than value for positive (negative) software limit switch.",
+      "Correctives": "Set correct position values."
+    },
+    {
+      "Error code": "E A31D",
+      "Error class": "0",
+      "Description": "Velocity range exceeded (parameter CTRL_v_max, M_n_max)",
+      "Cause": "The velocity was set to a value greater than the maximum permissible velocity in parameter CTRL_v_max or M_n_max, whichever is lower.",
+      "Correctives": "If the value of parameter M_n_max is greater than the value of parameter CTRL_v_max, increase the value of parameter CTRL_v_max or reduce the velocity value."
+    },
+    {
+      "Error code": "E A31E",
+      "Error class": "1",
+      "Description": "Stop by positive software limit switchParameter_SigLatchedBit 2",
+      "Cause": "Not possible to execute command because positive software limit switch was triggered.",
+      "Correctives": "Return to the permissible movement range."
+    },
+    {
+      "Error code": "E A31F",
+      "Error class": "1",
+      "Description": "Stop by negative software limit switchParameter_SigLatchedBit 2",
+      "Cause": "Not possible to execute command because negative software limit switch was triggered.",
+      "Correctives": "Return to the permissible movement range."
+    },
+    {
+      "Error code": "E A320",
+      "Error class": "par.",
+      "Description": "Permissible position deviation exceededParameter_SigLatchedBit 8",
+      "Cause": "External load or acceleration are too high.",
+      "Correctives": "Reduce external load or acceleration.Use a differently rated drive, if necessary.Error response can be adjusted via parameter ErrorResp_p_dif."
+    },
+    {
+      "Error code": "E A321",
+      "Error class": "0",
+      "Description": "Invalid setting for RS422 position interface",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A322",
+      "Error class": "0",
+      "Description": "Error detected in ramp calculation",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A323",
+      "Error class": "3",
+      "Description": "System error detected: Processing error detected during generation of profile",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A324",
+      "Error class": "1",
+      "Description": "Error detected during homing (additional info = detailed error code)Parameter_SigLatchedBit 4",
+      "Cause": "Homing movement was stopped in response to a detected error, the detailed reason is indicated by the additional info in the error memory.",
+      "Correctives": "Possible sub-error codes:E A325, E A326, E A327, E A328 or E A329."
+    },
+    {
+      "Error code": "E A325",
+      "Error class": "1",
+      "Description": "Limit switch to be approached not enabledParameter_SigLatchedBit 4",
+      "Cause": "Homing to positive limit switch or negative limit switch is disabled.",
+      "Correctives": "Enable limit switch via 'IOsigLimP'\u00a0or 'IOsigLimN'."
+    },
+    {
+      "Error code": "E A326",
+      "Error class": "1",
+      "Description": "Reference switch not found between positive limit switch and negative limit switchParameter_SigLatchedBit 4",
+      "Cause": "Reference switch inoperative or not correctly connected.",
+      "Correctives": "Verify the function and wiring of the reference switch."
+    },
+    {
+      "Error code": "E A329",
+      "Error class": "1",
+      "Description": "More than one signal positive limit switch/negative limit switch/reference switch activeParameter_SigLatchedBit 4",
+      "Cause": "Reference switch or limit switch not connected correctly or supply voltage for switches too low.",
+      "Correctives": "Verify the wiring and 24 VDC supply voltage."
+    },
+    {
+      "Error code": "E A32A",
+      "Error class": "1",
+      "Description": "Positive limit switch triggered with negative direction of movementParameter_SigLatchedBit 4",
+      "Cause": "Start reference movement with negative direction (for example, reference movement to negative limit switch) and activate the positive limit switch (switch in opposite direction of movement).",
+      "Correctives": "Verify correct connection and function of limit switch.Activate a jog movement with negative direction of movement (target limit switch must be connected to the negative limit switch)."
+    },
+    {
+      "Error code": "E A32B",
+      "Error class": "1",
+      "Description": "Negative limit switch triggered with positive direction of movementParameter_SigLatchedBit 4",
+      "Cause": "Start reference movement with positive direction (for example, reference movement to positive limit switch) and activate the negative limit switch (switch in opposite direction of movement).",
+      "Correctives": "Verify correct connection and function of limit switch.Activate a jog movement with positive direction of movement (target limit switch must be connected to the positive limit switch)."
+    },
+    {
+      "Error code": "E A32C",
+      "Error class": "1",
+      "Description": "Reference switch error detected (switch signal briefly enabled or switch overtraveled)Parameter_SigLatchedBit 4",
+      "Cause": "Switch signal disturbance.Motor subjected to vibration or shock when stopped after activation of the switch signal.",
+      "Correctives": "Verify supply voltage, cabling and function of switch.Verify motor response after stopping and optimize control loop settings."
+    },
+    {
+      "Error code": "E A32D",
+      "Error class": "1",
+      "Description": "Positive limit switch error detected (switch signal briefly enabled or switch overtraveled)Parameter_SigLatchedBit 4",
+      "Cause": "Switch signal disturbance.Motor subjected to vibration or shock when stopped after activation of the switch signal.",
+      "Correctives": "Verify supply voltage, cabling and function of switch.Verify motor response after stopping and optimize control loop settings."
+    },
+    {
+      "Error code": "E A32E",
+      "Error class": "1",
+      "Description": "Negative limit switch error detected (switch signal briefly enabled or switch overtraveled)Parameter_SigLatchedBit 4",
+      "Cause": "Switch signal disturbance.Motor subjected to vibration or shock when stopped after activation of the switch signal.",
+      "Correctives": "Verify supply voltage, cabling and function of switch.Verify motor response after stopping and optimize control loop settings."
+    },
+    {
+      "Error code": "E A32F",
+      "Error class": "1",
+      "Description": "Index pulse not foundParameter_SigLatchedBit 4",
+      "Cause": "Index pulse signal not connected or not working properly.",
+      "Correctives": "Verify index pulse signal and connection."
+    },
+    {
+      "Error code": "E A330",
+      "Error class": "0",
+      "Description": "Reference movement to index pulse cannot be reproduced. Index pulse is too close to the switchParameter_WarnLatchedBit 4",
+      "Cause": "The position difference between the index pulse and the switching point is insufficient.",
+      "Correctives": "Increase the distance between the index pulse and the switching point. If possible, the distance between the index pulse and the switching point should be a half motor revolution."
+    },
+    {
+      "Error code": "E A332",
+      "Error class": "1",
+      "Description": "Jog error detected (additional info = detailed error code)Parameter_SigLatchedBit 4",
+      "Cause": "Jog movement was stopped in response to a detected error.",
+      "Correctives": "For additional info, verify the detailed error code in the error memory."
+    },
+    {
+      "Error code": "E A333",
+      "Error class": "3",
+      "Description": "System error detected: Invalid internal selection",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A334",
+      "Error class": "2",
+      "Description": "Timeout Standstill Window monitoring",
+      "Cause": "Position deviation after movement greater than standstill window. This may have been caused by an external load.",
+      "Correctives": "Verify load.Verify settings for standstill window (parameter MON_p_win, MON_p_winTime and MON_p_winTout).Optimize control loop settings."
+    },
+    {
+      "Error code": "E A336",
+      "Error class": "1",
+      "Description": "System error detected: Jerk limitation with position offset after end of movement (additional info = offset in Inc.)",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A337",
+      "Error class": "0",
+      "Description": "Operating mode cannot be continuedParameter_WarnLatchedBit 4",
+      "Cause": "Continuation of interrupted movement in operating mode Profile Position is not possible because another operating mode had been active in the meantime.In the operating mode Motion Sequence, continuation is not possible if a motion blend was interrupted.",
+      "Correctives": "Restart the operating mode."
+    },
+    {
+      "Error code": "E A338",
+      "Error class": "0",
+      "Description": "Operating mode unavailableParameter_WarnLatchedBit 4",
+      "Cause": "The selected operating mode is not available.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A33A",
+      "Error class": "0",
+      "Description": "No valid zero point (ref_ok=0)Parameter_WarnLatchedBit 4",
+      "Cause": "No zero point defined by means of operating mode Homing.Zero point no longer valid due to movement beyond permissible movement range.Motor does not have an absolute encoder.",
+      "Correctives": "Use operating mode Homing to define a valid zero point.Use a motor with an absolute encoder."
+    },
+    {
+      "Error code": "E A33C",
+      "Error class": "0",
+      "Description": "Function not available in this operating modeParameter_WarnLatchedBit 4",
+      "Cause": "Activation of a function which is not available in the active operating mode.Example: Start of backlash compensation while autotuning/manual tuning is active.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A33D",
+      "Error class": "0",
+      "Description": "Motion blend is already activeParameter_WarnLatchedBit 4",
+      "Cause": "Change of motion blend during the ongoing motion blend (end position of motion blend not yet reached)",
+      "Correctives": "Wait for the motion blend to complete before setting the next position."
+    },
+    {
+      "Error code": "E A33E",
+      "Error class": "0",
+      "Description": "No movement activatedParameter_WarnLatchedBit 4",
+      "Cause": "Activation of a motion blend without movement.",
+      "Correctives": "Start a movement before the motion blend is activated."
+    },
+    {
+      "Error code": "E A33F",
+      "Error class": "0",
+      "Description": "Position of motion blend movement not in the range of the ongoing movementParameter_WarnLatchedBit 4",
+      "Cause": "The position of the motion blend is outside of the movement range.",
+      "Correctives": "Verify the position of the motion blend and the movement range."
+    },
+    {
+      "Error code": "E A340",
+      "Error class": "1",
+      "Description": "Error detected in operating mode Motion Sequence (additional info = detailed error code)Parameter_SigLatchedBit 4",
+      "Cause": "The operating mode Motion Sequence was stopped in response to a detected error. Verify the error memory for details on the detected error.",
+      "Correctives": "See the additional error information."
+    },
+    {
+      "Error code": "E A341",
+      "Error class": "0",
+      "Description": "Position of motion blend has already been passedParameter_WarnLatchedBit 4",
+      "Cause": "The movement has passed beyond the position of the motion blend.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A342",
+      "Error class": "1",
+      "Description": "Target velocity was not reached at motion blend position.Parameter_SigLatchedBit 4",
+      "Cause": "The position of the motion blend was overtraveled, the target velocity was not reached.",
+      "Correctives": "Reduce the ramp velocity so that the target velocity is reached at the position of the motion blend."
+    },
+    {
+      "Error code": "E A343",
+      "Error class": "0",
+      "Description": "Processing only possible with linear rampParameter_WarnLatchedBit 4",
+      "Cause": "Motion blend position was set with a non-linear ramp.",
+      "Correctives": "Set a linear ramp."
+    },
+    {
+      "Error code": "E A344",
+      "Error class": "par.",
+      "Description": "Maximum position deviation between motor encoder and machine encoder exceededParameter_SigLatchedBit 8",
+      "Cause": "Incorrect or inoperative encoder cable.Machine encoder not connected or not supplied correctly.Different counting directions of motor encoder and machine encoder.Incorrect setting of resolution factors (numerator or denominator) of machine encoder.",
+      "Correctives": "Verify encoder connection.Verify parameterization of machine encoder."
+    },
+    {
+      "Error code": "E A347",
+      "Error class": "0",
+      "Description": "Permissible position deviation exceededParameter_WarnLatchedBit 8",
+      "Cause": "External load or acceleration are too high.",
+      "Correctives": "Reduce external load or acceleration.Threshold value can be adjusted via the parameter MON_p_dif_warn."
+    },
+    {
+      "Error code": "E A348",
+      "Error class": "1",
+      "Description": "No analog reference value source selectedParameter_SigLatchedBit 4",
+      "Cause": "No analog reference value selected",
+      "Correctives": "Select an analog reference value source."
+    },
+    {
+      "Error code": "E A349",
+      "Error class": "0",
+      "Description": "Position setting exceeds system limits",
+      "Cause": "Position scaling of POSscaleDenom and POSscaleNum results in a scaling factor that is too small.",
+      "Correctives": "Change POSscaleDenom and POSscaleNum in such a way as to increase the resulting scaling factor."
+    },
+    {
+      "Error code": "E A34A",
+      "Error class": "0",
+      "Description": "Velocity setting exceeds system limits",
+      "Cause": "The velocity scaling of 'VELscaleDenom' and 'VELscaleNum' results in a scaling factor that is too small.The velocity has been set to a value greater than the maximum possible velocity (the maximum velocity is 13200\u00a0RPM).",
+      "Correctives": "Change 'VELscaleDenom' and 'VELscaleNum' in such a way as to increase the resulting scaling factor."
+    },
+    {
+      "Error code": "E A34B",
+      "Error class": "0",
+      "Description": "Ramp setting exceeds system limits",
+      "Cause": "The ramp scaling of 'RAMPscaleDenom' and 'RAMPscaleNum' results in a scaling factor that is too small.",
+      "Correctives": "Change of 'RAMPscaleDenom' and 'RAMPscaleNum' in such a way as to increase the resulting scaling factor."
+    },
+    {
+      "Error code": "E A34C",
+      "Error class": "0",
+      "Description": "Resolution of scaling too high (range exceeded)",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A350",
+      "Error class": "1",
+      "Description": "Change for jerk filter input position too greatParameter_SigLatchedBit 4",
+      "Cause": "Operating mode Electronic Gear with processing method 'Position synchronization with compensation movement' has been activated which resulted in a position change greater than 0.25 revolutions.",
+      "Correctives": "Deactivate jerk filter processing for Electronic Gear or use processing method 'Position synchronization without compensation movement'."
+    },
+    {
+      "Error code": "E A351",
+      "Error class": "1",
+      "Description": "Function cannot be executed with this position scaling factorParameter_SigLatchedBit 4",
+      "Cause": "The positions scaling factor is set to a value less than 1rev/131072usr_p, which is less than the internal resolution.In the operating mode Cyclic Synchronous Position, the resolution is not set to 1rev/131072usr_p.",
+      "Correctives": "Use a different position scaling factor or deactivate the selected function."
+    },
+    {
+      "Error code": "E A355",
+      "Error class": "1",
+      "Description": "Error detected during relative movement after capture (additional info = detailed error code)Parameter_SigLatchedBit 4",
+      "Cause": "Movement was stopped by error.",
+      "Correctives": "Verify the error memory."
+    },
+    {
+      "Error code": "E A356",
+      "Error class": "0",
+      "Description": "Function Relative Movement After Capture not assigned to a digital input",
+      "Cause": "-",
+      "Correctives": "Assign the function Relative Movement After Capture to a digital input."
+    },
+    {
+      "Error code": "E A357",
+      "Error class": "0",
+      "Description": "Deceleration still running",
+      "Cause": "Command is not permissible during deceleration.",
+      "Correctives": "Wait until motor has come to a complete standstill."
+    },
+    {
+      "Error code": "E A358",
+      "Error class": "1",
+      "Description": "Target position overtraveled with function Relative Movement After CaptureParameter_SigLatchedBit 4",
+      "Cause": "Stopping distance too small or velocity too high at the point in time of the capture event.",
+      "Correctives": "Reduce the velocity."
+    },
+    {
+      "Error code": "E A359",
+      "Error class": "0",
+      "Description": "Request cannot be processed since the relative movement after capture is still active",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A35A",
+      "Error class": "1",
+      "Description": "Selected data set cannot be startedParameter_SigLatchedBit 4",
+      "Cause": "The data set with the selected number is not available.",
+      "Correctives": "Verify the number of the data set."
+    },
+    {
+      "Error code": "E A35C",
+      "Error class": "1",
+      "Description": "Movement to new reference position is not possible after a limit switch has been triggered and a Fault Reset has been performed",
+      "Cause": "The difference between the actual position and the reference position is too great.",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E A35D",
+      "Error class": "par.",
+      "Description": "Permissible velocity deviation exceededParameter_SigLatchedBit 8",
+      "Cause": "Load or acceleration too high.",
+      "Correctives": "Reduce load or acceleration."
+    },
+    {
+      "Error code": "E B100",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Indeterminable serviceParameter_WarnLatchedBit 5",
+      "Cause": "Unsupported Modbus service was received.",
+      "Correctives": "Verify application on the Modbus master."
+    },
+    {
+      "Error code": "E B101",
+      "Error class": "1",
+      "Description": "Incorrect I/O data configuration (additional info = Modbus register address)Parameter_SigLatchedBit 21",
+      "Cause": "The I/O data configuration or the Modbus I/O scanning configuration contains an invalid parameter.",
+      "Correctives": "Verify the configuration of the I/O data."
+    },
+    {
+      "Error code": "E B102",
+      "Error class": "0",
+      "Description": "Fieldbus module: General error detectedParameter_WarnLatchedBit 21",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B103",
+      "Error class": "2",
+      "Description": "Fieldbus module: Controlling communication channel has been closedParameter_SigLatchedBit 21",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B104",
+      "Error class": "2",
+      "Description": "Fieldbus module: Internal communication error detectedParameter_SigLatchedBit 21",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B105",
+      "Error class": "2",
+      "Description": "Fieldbus module: I/O data timeoutParameter_SigLatchedBit 21",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B106",
+      "Error class": "2",
+      "Description": "Fieldbus module: I/O data mapping error detectedParameter_SigLatchedBit 21",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B107",
+      "Error class": "4",
+      "Description": "Fieldbus module: Nonvolatile memory error detected in moduleParameter_SigLatchedBit 21",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B108",
+      "Error class": "1",
+      "Description": "Fieldbus module: Active IOC physical layer does not match the IOC physical layer of the detected fieldbus module.Parameter_SigLatchedBit 21",
+      "Cause": "The manufacturer data has been stored with a physical layer different from the physical layer normally used by the module.",
+      "Correctives": "Contact your Schneider Electric service representative."
+    },
+    {
+      "Error code": "E B109",
+      "Error class": "4",
+      "Description": "Fieldbus module: Synchronization heartbeat lost between module and driveParameter_SigLatchedBit 21",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B120",
+      "Error class": "2",
+      "Description": "Cyclic communication: Incorrect cycle timeParameter_SigLatchedBit 21",
+      "Cause": "The drive does not support the configured cycle time or the difference between the measured cycle time and the configured cycle time is too great.",
+      "Correctives": "Change the cycle time in the master controller to a cycle time supported by the drive or verify synchronization requirements."
+    },
+    {
+      "Error code": "E B121",
+      "Error class": "2",
+      "Description": "Cyclic communication: Synchronization signal missingParameter_SigLatchedBit 21",
+      "Cause": "Two cycles have passed without a synchronization signal having been received.",
+      "Correctives": "Analyze the communication."
+    },
+    {
+      "Error code": "E B122",
+      "Error class": "2",
+      "Description": "Cyclic communication: Incorrect synchronizationParameter_SigLatchedBit 21",
+      "Cause": "One signal was missing and the expected second signal was received at an incorrect point in time. The master controller may be unable to provide the required synchronization signals at the set cycle time, for example, due to insufficient computing power.",
+      "Correctives": "Analyze the communication or increase the cycle time."
+    },
+    {
+      "Error code": "E B123",
+      "Error class": "2",
+      "Description": "Cyclic communication: The selected cycle time tolerance is too highParameter_SigLatchedBit 21",
+      "Cause": "The cycle time tolerance may not exceed one quarter of the set cycle time.",
+      "Correctives": "Enter a correct value."
+    },
+    {
+      "Error code": "E B124",
+      "Error class": "0",
+      "Description": "Cyclic Communication: Drive is not synchronous with master cycleParameter_WarnLatchedBit 21",
+      "Cause": "Operating mode has been activated but drive is not synchronized to external synchronization signal.",
+      "Correctives": "After having started the synchronization mechanism, wait for 120 cycles before activating the operating mode."
+    },
+    {
+      "Error code": "E B200",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Protocol error detectedParameter_WarnLatchedBit 5",
+      "Cause": "Logical protocol error detected: Incorrect length or unsupported subfunction.",
+      "Correctives": "Verify application on the Modbus master."
+    },
+    {
+      "Error code": "E B201",
+      "Error class": "2",
+      "Description": "RS485/Modbus: Interruption of the connectionParameter_SigLatchedBit 5",
+      "Cause": "Connection monitoring has detected an interruption of the connection.",
+      "Correctives": "Verify all connections and cables used for data exchange. Verify that the device is on."
+    },
+    {
+      "Error code": "E B202",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Interruption of the connectionParameter_WarnLatchedBit 5",
+      "Cause": "Connection monitoring has detected an interruption of the connection.",
+      "Correctives": "Verify all connections and cables used for data exchange. Verify that the device is on."
+    },
+    {
+      "Error code": "E B203",
+      "Error class": "0",
+      "Description": "RS485/Modbus: Incorrect number of monitor objectsParameter_WarnLatchedBit 5",
+      "Cause": "-",
+      "Correctives": "-"
+    },
+    {
+      "Error code": "E B700",
+      "Error class": "0",
+      "Description": "Drive Profile Lexium: On activation of the profile, no dmControl, refA or refB has been mapped.",
+      "Cause": "dmControl, refA or refB have not been mapped.",
+      "Correctives": "Map dmControl, refA or refB."
+    },
+    {
+      "Error code": "E B702",
+      "Error class": "1",
+      "Description": "Insufficient velocity resolution due to velocity scaling",
+      "Cause": "Due to the configured velocity scaling, the velocity resolution in REFA16 is insufficient.",
+      "Correctives": "Change the velocity scaling."
+    },
+    {
+      "Error code": "E B703",
+      "Error class": "0",
+      "Description": "Drive Profile Lexium: Write request with incorrect data type.",
+      "Cause": "-",
+      "Correctives": "-"
+    }
+  ]
