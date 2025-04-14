@@ -52,6 +52,192 @@
     <p>Si no es redireccionado automáticamente, haga clic <a href="Home/index.html">aquí</a>.</p>
     <script>
         window.location.href = 'Home/index.html';
+
+        // Estructura de directorios de la aplicación
+        const appStructure = {
+            'CNAME': 'file',
+            'index.html': 'file',
+            'admin': {
+                'index.html': 'file',
+                'css': {
+                    'admin.css': 'file'
+                },
+                'js': {
+                    'admin.js': 'file'
+                }
+            },
+            'Assets': {
+                'errorcode.png': 'file'
+            },
+            'config': {
+                'firebase.config.js': 'file'
+            },
+            'ErrorCodes': {
+                'index.html': 'file',
+                'css': {
+                    'styles.css': 'file'
+                },
+                'Databases': {
+                    'folders.json': 'file',
+                    'Schneider': {
+                        'Altivar': 'directory',
+                        'LXM32': {
+                            'errores.json': 'file'
+                        }
+                    },
+                    'Siemens': 'directory'
+                },
+                'js': {
+                    'app.js': 'file',
+                    'errorLoader.js': 'file',
+                    'excelLoader.js': 'file',
+                    'folderLoader.js': 'file'
+                }
+            },
+            'Home': {
+                'index.html': 'file',
+                'css': {
+                    'styles.css': 'file'
+                },
+                'js': {
+                    'main.js': 'file'
+                }
+            },
+            'Viewer': {
+                'xml-cvs-excel_Viewr.html': 'file',
+                'css': {
+                    'styles.css': 'file'
+                },
+                'js': {
+                    'script.js': 'file'
+                }
+            }
+        };
+
+        // Sobreescribir console.log para capturar el comando ls
+        const originalConsoleLog = console.log;
+        let currentPath = [];
+
+        console.log = function() {
+            // Convertir los argumentos a una cadena
+            const args = Array.from(arguments).join(' ');
+            
+            // Verificar si es el comando ls
+            if (args.trim() === 'ls') {
+                listDirectory(currentPath);
+                return;
+            }
+            
+            // Verificar si es el comando cd
+            if (args.trim().startsWith('cd ')) {
+                const dirName = args.trim().substring(3);
+                changeDirectory(dirName);
+                return;
+            }
+            
+            // Pasar a la función original para otros comandos
+            originalConsoleLog.apply(console, arguments);
+        };
+        
+        // Función para listar el contenido del directorio actual
+        function listDirectory(path) {
+            let currentDir = appStructure;
+            
+            // Navegar hasta el directorio actual
+            for (const dir of path) {
+                if (currentDir[dir] && typeof currentDir[dir] === 'object') {
+                    currentDir = currentDir[dir];
+                } else {
+                    originalConsoleLog('Error: No es un directorio válido');
+                    return;
+                }
+            }
+            
+            // Mostrar el path actual
+            originalConsoleLog(`Listando contenido de: /${path.join('/')}`);
+            
+            // Listar los archivos y directorios
+            const entries = Object.keys(currentDir);
+            
+            if (entries.length === 0) {
+                originalConsoleLog('(directorio vacío)');
+                return;
+            }
+            
+            // Ordenar las entradas: primero directorios, luego archivos
+            const dirs = [];
+            const files = [];
+            
+            entries.forEach(entry => {
+                const isDir = typeof currentDir[entry] === 'object' && currentDir[entry] !== null && currentDir[entry] !== 'file';
+                if (isDir) {
+                    dirs.push(`📁 ${entry}/`);
+                } else {
+                    files.push(`📄 ${entry}`);
+                }
+            });
+            
+            // Mostrar directorios y archivos
+            [...dirs, ...files].forEach(entry => {
+                originalConsoleLog(entry);
+            });
+        }
+        
+        // Función para cambiar de directorio
+        function changeDirectory(dirName) {
+            if (dirName === '..') {
+                // Subir un nivel
+                if (currentPath.length > 0) {
+                    currentPath.pop();
+                    originalConsoleLog(`Cambiado a: /${currentPath.join('/')}`);
+                } else {
+                    originalConsoleLog('Ya estás en la raíz');
+                }
+                return;
+            }
+            
+            if (dirName === '/') {
+                // Ir a la raíz
+                currentPath = [];
+                originalConsoleLog('Cambiado a: /');
+                return;
+            }
+            
+            // Navegar hasta el directorio actual
+            let currentDir = appStructure;
+            for (const dir of currentPath) {
+                if (currentDir[dir] && typeof currentDir[dir] === 'object') {
+                    currentDir = currentDir[dir];
+                } else {
+                    originalConsoleLog('Error: Ruta inválida');
+                    return;
+                }
+            }
+            
+            // Verificar si el directorio existe
+            if (currentDir[dirName] && typeof currentDir[dirName] === 'object' && currentDir[dirName] !== 'file') {
+                currentPath.push(dirName);
+                originalConsoleLog(`Cambiado a: /${currentPath.join('/')}`);
+            } else {
+                originalConsoleLog(`Error: '${dirName}' no es un directorio o no existe`);
+            }
+        }
+        
+        // Mostrar instrucciones en la consola
+        setTimeout(() => {
+            originalConsoleLog('=== Navegador de archivos en consola ===');
+            originalConsoleLog('Comandos disponibles:');
+            originalConsoleLog('  ls    - Listar archivos y carpetas');
+            originalConsoleLog('  cd dir - Cambiar a un directorio');
+            originalConsoleLog('  cd .. - Subir un nivel');
+            originalConsoleLog('  cd /  - Ir a la raíz');
+            originalConsoleLog('Prueba escribiendo "ls" en la consola');
+        }, 1000);
+        
+        // Redirigir a la página principal después de un breve retraso
+        setTimeout(() => {
+            window.location.href = 'Home/index.html';
+        }, 5000);
     </script>
 </body>
 </html>
