@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visor de Códigos de Error - Materiales Eléctricos</title>
-    <!-- El CSS lo incorporaremos más adelante -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="nav-top">
+        <a href="../index.html" class="back-button"><i class="fas fa-home"></i> Volver al menú principal</a>
+    </div>
+    
     <header>
         <h1>Visor de Códigos de Error</h1>
         <p>Base de datos de códigos de error de equipos eléctricos industriales</p>
@@ -16,41 +21,31 @@
         <section class="search-section">
             <h2>Buscador de Errores</h2>
             
-            <div class="search-filters">
+            <div class="filter-row">
                 <div class="filter-group">
                     <label for="brandFilter">Marca:</label>
                     <select id="brandFilter">
-                        <option value="">Todas las marcas</option>
-                        <option value="schneider">Schneider Electric</option>
-                        <option value="siemens">Siemens</option>
-                        <option value="abb">ABB</option>
-                        <option value="ge">General Electric</option>
-                        <option value="rockwell">Rockwell Automation</option>
-                        <option value="eaton">Eaton</option>
-                        <option value="phoenix">Phoenix Contact</option>
-                        <option value="omron">Omron</option>
-                        <option value="mitsubishi">Mitsubishi Electric</option>
+                        <option value="">Seleccione una marca</option>
+                        <!-- Las opciones se cargarán dinámicamente desde folders.json -->
                     </select>
                 </div>
-                
                 <div class="filter-group">
-                    <label for="modelFilter">Modelo/Serie:</label>
-                    <input type="text" id="modelFilter" placeholder="Ej. ATV312, SIMATIC S7...">
+                    <label for="modelFilter">Modelo:</label>
+                    <select id="modelFilter" disabled>
+                        <option value="">Seleccione primero una marca</option>
+                    </select>
                 </div>
-                
+            </div>
+            
+            <!-- Buscador de códigos - inicialmente oculto -->
+            <div id="searchContainer" class="search-filters" style="display: none;">
                 <div class="filter-group">
                     <label for="errorCodeFilter">Código de Error:</label>
-                    <input type="text" id="errorCodeFilter" placeholder="Ej. E07, F0001...">
+                    <input type="text" id="errorCodeFilter" placeholder="Búsqueda por código específico">
                 </div>
                 
                 <button id="searchBtn">Buscar</button>
                 <button id="resetBtn">Restablecer</button>
-            </div>
-            
-            <!-- Botón de administración (podría estar oculto o protegido en producción) -->
-            <div class="admin-controls">
-                <button id="initDbBtn">Inicializar Base de Datos</button>
-                <span id="dbStatus"></span>
             </div>
         </section>
         
@@ -60,14 +55,8 @@
             
             <div class="results-container">
                 <table id="resultsTable">
-                    <thead>
-                        <tr>
-                            <th>Marca</th>
-                            <th>Modelo/Serie</th>
-                            <th>Código</th>
-                            <th>Descripción</th>
-                            <th>Acciones</th>
-                        </tr>
+                    <thead id="resultsTableHead">
+                        <!-- Los encabezados se insertarán dinámicamente desde el Excel -->
                     </thead>
                     <tbody id="resultsBody">
                         <!-- Los resultados se insertarán aquí dinámicamente -->
@@ -85,65 +74,22 @@
                 <button id="nextPage" disabled>Siguiente</button>
             </div>
         </section>
-        
-        <section id="errorDetail" class="error-detail-section">
-            <h2>Detalles del Error <span id="detailErrorCode"></span></h2>
-            <button id="closeDetail">&times;</button>
-            
-            <div class="error-info">
-                <div class="error-header">
-                    <div class="brand-logo" id="detailBrandLogo"></div>
-                    <div class="error-title">
-                        <h3 id="detailErrorTitle"></h3>
-                        <div class="error-subtitle">
-                            <span id="detailModel"></span> | 
-                            <span id="detailErrorCode2"></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="error-body">
-                    <div class="info-group">
-                        <h4>Descripción</h4>
-                        <p id="detailDescription"></p>
-                    </div>
-                    
-                    <div class="info-group">
-                        <h4>Posibles Causas</h4>
-                        <ul id="detailCauses"></ul>
-                    </div>
-                    
-                    <div class="info-group">
-                        <h4>Soluciones Recomendadas</h4>
-                        <ol id="detailSolutions"></ol>
-                    </div>
-                    
-                    <div class="info-group">
-                        <h4>Nivel de Gravedad</h4>
-                        <div id="detailSeverity"></div>
-                    </div>
-                    
-                    <div class="info-group" id="detailDiagramContainer">
-                        <h4>Diagrama o Imagen de Referencia</h4>
-                        <div class="diagram-container">
-                            <img id="detailDiagram" src="" alt="Diagrama de referencia">
-                        </div>
-                    </div>
-                    
-                    <div class="info-group">
-                        <h4>Enlaces al Manual</h4>
-                        <div id="detailLinks"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
     
     <footer>
-        <p>Base de datos de códigos de error para equipos eléctricos industriales | Última actualización: Abril 10, 2025</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="footer-info">
+                <p>Base de datos de códigos de error para equipos eléctricos industriales</p>
+                <p>Desarrollado por Codeiro / Arbert • Última actualización: Abril 14, 2025</p>
+            </div>
+        </div>
     </footer>
     
-    <script src="js/errorDatabase.js"></script>
+    <script src="js/folderLoader.js"></script>
+    <script src="js/excelLoader.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "ABB",
+    "folders": []
+  },
+  {
+    "name": "Schneider",
+    "folders": [
+      {
+        "name": "Altivar",
+        "folders": []
+      },
+      {
+        "name": "LXM32",
+        "folders": []
+      }
+    ]
+  },
+  {
+    "name": "Siemens",
+    "folders": []
+  }
+
+]

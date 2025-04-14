@@ -1,6 +1,6 @@
 # Archivos de configuración con información sensible
 config/mongodb.config.js
-config/firebase.config.js
+# config/firebase.config.js  # Permitimos subir la configuración de Firebase para GitHub Pages
 config/*.env
 config/secrets.json
 

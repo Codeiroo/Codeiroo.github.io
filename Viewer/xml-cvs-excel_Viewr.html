@@ -5,10 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizador Multiformato</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .back-button {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin: 20px 0;
+        }
+        
+        .back-button:hover {
+            background-color: #34495e;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Visualizador Multiformato</h1>
+        <a href="../index.html" class="back-button">← Volver al menú principal</a>
         
         <div class="file-input-container">
             <input type="file" id="fileInput" accept=".xml,.json,.csv,.xlsx,.xls" multiple>

@@ -5,9 +5,7 @@ const auth = firebase.auth();
 // Referencias DOM
 const loginContainer = document.getElementById('loginContainer');
 const adminContainer = document.getElementById('adminContainer');
-const loginForm = document.getElementById('loginForm');
-const emailField = document.getElementById('email');
-const passwordField = document.getElementById('password');
+const googleLoginBtn = document.getElementById('googleLoginBtn');
 const errorMsg = document.getElementById('errorMsg');
 const errorMsgContainer = document.getElementById('errorMsgContainer');
 const logoutBtn = document.getElementById('logoutBtn');
@@ -44,39 +42,27 @@ let currentPage = 1;
 let errorsPerPage = 10;
 let totalPages = 1;
 
-// Evento para el inicio de sesión
-loginForm.addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const email = emailField.value.trim();
-    const password = passwordField.value;
-    
-    // Validaciones básicas
-    if (!email || !password) {
-        showLoginError('Por favor, complete todos los campos.');
-        return;
-    }
-    
+// Evento para el inicio de sesión con Google
+googleLoginBtn.addEventListener('click', async function() {
     try {
-        // Intentar iniciar sesión
-        await auth.signInWithEmailAndPassword(email, password);
-        clearLoginForm();
+        const provider = new firebase.auth.GoogleAuthProvider();
+        await auth.signInWithPopup(provider);
     } catch (error) {
-        console.error('Error de inicio de sesión:', error);
+        console.error('Error de inicio de sesión con Google:', error);
         let errorMessage = 'Error al iniciar sesión. Intente nuevamente.';
         
         switch (error.code) {
-            case 'auth/invalid-email':
-                errorMessage = 'La dirección de correo no es válida.';
+            case 'auth/popup-blocked':
+                errorMessage = 'La ventana emergente fue bloqueada. Por favor, permita las ventanas emergentes e intente nuevamente.';
                 break;
-            case 'auth/user-disabled':
-                errorMessage = 'Esta cuenta de usuario ha sido deshabilitada.';
+            case 'auth/popup-closed-by-user':
+                errorMessage = 'El proceso de inicio de sesión fue cancelado. Intente nuevamente.';
                 break;
-            case 'auth/user-not-found':
-                errorMessage = 'No existe una cuenta con este correo.';
+            case 'auth/account-exists-with-different-credential':
+                errorMessage = 'Ya existe una cuenta asociada con esta dirección de correo electrónico.';
                 break;
-            case 'auth/wrong-password':
-                errorMessage = 'La contraseña es incorrecta.';
+            default:
+                errorMessage = `Error al iniciar sesión: ${error.message}`;
                 break;
         }
         
@@ -100,7 +86,7 @@ auth.onAuthStateChanged(user => {
         currentUser = user;
         loginContainer.style.display = 'none';
         adminContainer.style.display = 'block';
-        userEmailDisplay.textContent = user.email;
+        userEmailDisplay.textContent = user.email || user.displayName;
         
         // Cargar datos iniciales
         loadErrorCodes();
@@ -111,7 +97,6 @@ auth.onAuthStateChanged(user => {
         loginContainer.style.display = 'flex';
         adminContainer.style.display = 'none';
         userEmailDisplay.textContent = '';
-        clearLoginForm();
     }
 });
 
