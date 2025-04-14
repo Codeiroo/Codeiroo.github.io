@@ -28,6 +28,30 @@ let currentSearchResults = [];
 let itemsPerPage = 10;
 let currentPage = 1;
 
+// Función para determinar la ruta base según el entorno (GitHub Pages o local)
+function getBasePath() {
+    // Verificar si estamos en GitHub Pages (la URL contiene username.github.io o github.io)
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    
+    if (isGitHubPages) {
+        // En GitHub Pages, necesitamos incluir el nombre del repositorio en la ruta
+        const pathSegments = window.location.pathname.split('/');
+        let repoName = '';
+        
+        // Si es username.github.io/repo, el nombre del repositorio es el segundo segmento
+        if (pathSegments.length > 1) {
+            repoName = pathSegments[1];
+        }
+        
+        console.log("Ejecutando en GitHub Pages. Ruta base ajustada a: /" + repoName);
+        return repoName ? '/' + repoName : '';
+    } else {
+        // En desarrollo local
+        console.log("Ejecutando en entorno local. Ruta base: ''");
+        return '';
+    }
+}
+
 function initExcelLoader() {
     // Elementos DOM
     const searchContainer = document.getElementById('searchContainer');
@@ -63,8 +87,11 @@ function initExcelLoader() {
             // Ocultamos el buscador mientras cargamos el Excel
             searchContainer.style.display = 'none';
             
+            // Obtener la ruta base según el entorno
+            const basePath = getBasePath();
+            
             // Ruta base de la carpeta que contiene los archivos Excel
-            const folderPath = `Databases/${brand}/${model}`;
+            const folderPath = `${basePath}/ErrorCodes/Databases/${brand}/${model}`;
             console.log(`Buscando archivos Excel en la carpeta: ${folderPath}`);
             
             // Intenta buscar archivos Excel en la carpeta
