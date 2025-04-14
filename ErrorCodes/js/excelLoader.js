@@ -115,13 +115,16 @@ function initExcelLoader() {
         // Lista de nombres de archivo a intentar (incluyendo nombre de la carpeta + genéricos)
         const possibleFileNames = [
             `${folderPath.split('/').pop()}`, // Nombre basado en la carpeta
+            'Codigos_de_Error_Schneider',     // Primero los nombres con mayúsculas exactas
             'errores',
             'codigos_de_error',
             'Codigos_de_Error',
-            'Codigos_de_Error_Schneider',
             'errors',
-            'data'
+            'data',
+            'index'
         ];
+        
+        console.log("Buscando en carpeta normalizada:", folderPath);
         
         // Construir una lista de todas las combinaciones posibles
         const pathsToTry = [];
@@ -132,6 +135,33 @@ function initExcelLoader() {
                 pathsToTry.push(`${folderPath}/${name}${ext}`);
             });
         });
+        
+        // Intentar también con versiones en mayúsculas y minúsculas de la carpeta
+        const folderSegments = folderPath.split('/');
+        if (folderSegments.length >= 2) {
+            const lastSegment = folderSegments.pop();
+            const parentPath = folderSegments.join('/');
+            
+            // Agregar variantes en mayúsculas y minúsculas
+            const variants = [
+                lastSegment.toLowerCase(),
+                lastSegment.toUpperCase(),
+                lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1).toLowerCase()
+            ];
+            
+            variants.forEach(variant => {
+                if (variant !== lastSegment) { // Si es diferente a la original
+                    const altFolderPath = `${parentPath}/${variant}`;
+                    console.log("Probando ruta alternativa:", altFolderPath);
+                    
+                    possibleFileNames.forEach(name => {
+                        excelExtensions.forEach(ext => {
+                            pathsToTry.push(`${altFolderPath}/${name}${ext}`);
+                        });
+                    });
+                }
+            });
+        }
         
         // Función para intentar cargar un archivo de la lista de rutas
         function tryNextPath(index) {
